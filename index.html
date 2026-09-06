@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isai — Multilingual Music Player • 500 Songs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
+        <div class="logo-text-wrap">
+          <span class="logo-text">Isai</span>
+          <span class="logo-sub">500 Songs • 4 Languages</span>
+        </div>
+        <span class="logo-badge">PLAYER</span>
+      </div>
+      <div class="search-wrap">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="searchInput" placeholder="Search title, artist, album, language..." aria-label="Search songs by title, artist, album or language" autocomplete="off" />
+        <button id="clearSearch" class="clear-search hidden" aria-label="Clear search">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="notice-bar" role="note">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+    <span><strong>Playback:</strong> Spotify embedded — stays on this page. <a href="https://open.spotify.com/playlist/3BcpgYmZZtaEk4ngkfjMK1" target="_blank" rel="noopener">Tamil 200</a> • <a href="https://open.spotify.com/playlist/41Cs3We0JCA8QjLC5DClsC" target="_blank" rel="noopener">Telugu 100</a> • <a href="https://open.spotify.com/playlist/0PMKjSoU937cvzkHpFJ3hf" target="_blank" rel="noopener">English 100</a> • <a href="https://open.spotify.com/playlist/37i9dQZF1DWTYKFynxp6Fs" target="_blank" rel="noopener">Malayalam 100</a> • 500 songs</span>
+  </div>
+
+  <main class="container" role="main">
+    <!-- LEFT: NOW PLAYING -->
+    <section class="player-card now-playing" aria-label="Now playing">
+      <div class="now-playing-head">
+        <div class="now-playing-title">
+          <span class="spotify-dot"></span>
+          <h2>NOW PLAYING</h2>
+        </div>
+        <div class="now-playing-sub" id="nowPlayingSub">Tamil • Single (2024)</div>
+      </div>
+
+      <div class="artwork-wrap" id="artworkWrap">
+        <img id="artwork" src="" alt="Album artwork" class="artwork" />
+        <div id="artworkFallback" class="artwork-fallback" aria-hidden="true">
+          <span id="fallbackInitials">IS</span>
+          <small id="fallbackComposer">—</small>
+        </div>
+        <button id="favBtn" class="fav-float" aria-label="Add to favorites">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2.08C10.5 3.5 9.5 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        </button>
+        <div id="langBadge" class="lang-badge">TAMIL</div>
+        <div id="playingBadge" class="playing-badge">
+          <span class="bars"><i></i><i></i><i></i></span> Playing
+        </div>
+      </div>
+
+      <div class="song-meta left-meta hidden" aria-hidden="true" style="display:none">
+        <h1 id="songTitle" class="song-title">Select a song</h1>
+        <p id="songArtist" class="song-artist">—</p>
+        <p id="songMovie" class="song-movie hidden"></p>
+        <p id="songComposer" class="song-composer hidden"></p>
+        <p id="songAlbum" class="song-album hidden"></p>
+        <p id="previewStatus" class="preview-status">Now Playing</p>
+      </div>
+
+      <a id="saveSpotifyBtn" class="save-spotify" href="#" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.65 14.65c-.18.3-.56.39-.86.21-2.36-1.44-5.33-1.77-8.83-.97-.34.08-.68-.13-.76-.47-.08-.34.13-.68.47-.76 3.89-.89 7.2-.5 9.88 1.13.3.18.39.56.21.86zm1.24-2.76c-.23.37-.72.48-1.09.25-2.7-1.66-6.82-2.14-10.01-1.17-.43.13-.88-.11-1.01-.54-.13-.43.11-.88.54-1.01 3.66-1.11 8.33-.57 11.43 1.38.37.23.48.72.25 1.09zm.11-2.87c-3.24-1.92-8.58-2.1-11.67-1.15-.5.15-1.03-.14-1.18-.64-.15-.5.14-1.03.64-1.18 3.58-1.09 9.53-.88 13.32 1.37.44.26.58.82.32 1.26-.26.44-.82.58-1.26.32z"/></svg>
+        Save on Spotify
+      </a>
+
+      <div class="spotify-card" id="spotifyCard">
+        <img id="spotifyCardArtwork" class="spotify-card-artwork" src="" alt="Spotify artwork" />
+        <div class="spotify-card-info">
+          <div class="spotify-card-title" id="spotifyCardTitle">Shape of You</div>
+          <div class="spotify-card-artist" id="spotifyCardArtist">Ed Sheeran</div>
+          <div class="spotify-card-save"><span class="spotify-card-plus">+</span> Save on Spotify</div>
+        </div>
+        <span class="spotify-card-logo" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.65 14.65c-.18.3-.56.39-.86.21-2.36-1.44-5.33-1.77-8.83-.97-.34.08-.68-.13-.76-.47-.08-.34.13-.68.47-.76 3.89-.89 7.2-.5 9.88 1.13.3.18.39.56.21.86zm1.24-2.76c-.23.37-.72.48-1.09.25-2.7-1.66-6.82-2.14-10.01-1.17-.43.13-.88-.11-1.01-.54-.13-.43.11-.88.54-1.01 3.66-1.11 8.33-.57 11.43 1.38.37.23.48.72.25 1.09zm.11-2.87c-3.24-1.92-8.58-2.1-11.67-1.15-.5.15-1.03-.14-1.18-.64-.15-.5.14-1.03.64-1.18 3.58-1.09 9.53-.88 13.32 1.37.44.26.58.82.32 1.26-.26.44-.82.58-1.26.32z"/></svg>
+        </span>
+        <div class="spotify-card-footer">
+          <div class="spotify-card-progress"><div class="spotify-card-progress-bar" id="spotifyCardProgressBar"></div></div>
+          <span class="spotify-card-duration" id="spotifyCardDuration">03:53</span>
+          <span class="spotify-card-more">•••</span>
+          <button id="spotifyCardPlayBtn" class="spotify-card-play" aria-label="Play">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v14l11-7z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="spotify-embed-left hidden" id="spotifyEmbedWrap">
+        <iframe id="spotifyFrame" title="Spotify player" src="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div id="spotifyPlaceholder" class="spotify-placeholder">
+          <div class="spotify-placeholder-icon">♪</div>
+          <p>Select a song to load<br><strong>Spotify</strong> player</p>
+          <small>Stays on this page — no redirect</small>
+        </div>
+      </div>
+      <div class="spotify-info-left hidden" id="spotifyInfoLeft">
+        <h3 id="spotifyTrackTitle" class="spotify-track-title">—</h3>
+        <p id="spotifyTrackArtist" class="spotify-track-artist">—</p>
+        <p id="spotifyTrackAlbum" class="spotify-track-album"></p>
+      </div>
+      <a id="spotifyOpenLink" href="#" target="_blank" rel="noopener" class="spotify-open-link hidden">Open in Spotify ↗</a>
+
+      <!-- Hidden legacy controls kept for JS compatibility (Image 1 removed) -->
+      <div class="hidden" aria-hidden="true" style="display:none">
+        <div id="progressWrap" class="progress-wrap" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressBar" class="progress-bar"></div></div>
+        <span id="currentTime">0:00</span><span id="totalTime">0:00</span>
+        <button id="playBtn" aria-label="Play"><svg id="playIcon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v14l11-7z"/></svg><svg id="pauseIcon" class="hidden" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6zm8-14v14h4V5z"/></svg></button>
+        <button id="prevBtn" aria-label="Previous"></button><button id="nextBtn" aria-label="Next"></button><button id="shuffleBtn" aria-label="Shuffle"></button><button id="repeatBtn" aria-label="Repeat"></button>
+        <button id="muteBtn" aria-label="Mute"><svg id="volIcon"></svg><svg id="muteIcon" class="hidden"></svg></button>
+        <input id="volumeSlider" type="range" min="0" max="100" value="80" aria-label="Volume" />
+        <span id="volPercent">80%</span>
+      </div>
+
+      <!-- hidden legacy ids for JS compatibility -->
+      <span id="spotifyLang" class="hidden"></span>
+    </section>
+
+    <!-- RIGHT: PLAYLIST -->
+    <section class="playlist-card" aria-label="Playlist">
+      <div class="playlist-header">
+        <div class="tabs" role="tablist" id="tabs">
+          <button data-filter="all" class="tab active" role="tab" aria-selected="true">All <span class="tab-count" id="countAll">0</span></button>
+          <button data-filter="tamil" class="tab" role="tab" aria-selected="false">Tamil <span class="tab-count" id="countTamil">0</span></button>
+          <button data-filter="telugu" class="tab" role="tab" aria-selected="false">Telugu <span class="tab-count" id="countTelugu">0</span></button>
+          <button data-filter="english" class="tab" role="tab" aria-selected="false">English <span class="tab-count" id="countEnglish">0</span></button>
+          <button data-filter="malayalam" class="tab" role="tab" aria-selected="false">Malayalam <span class="tab-count" id="countMalayalam">0</span></button>
+          <button data-filter="favorites" class="tab" role="tab" aria-selected="false">❤️ Favorites <span class="tab-count" id="countFav">0</span></button>
+        </div>
+        <div class="playlist-sub"><span id="playlistInfo">0 songs</span> <span id="composerInfo" class="composer-info"></span></div>
+      </div>
+      <div id="songList" class="song-list" role="list"></div>
+      <div id="emptyFav" class="empty-state hidden">
+        <div class="empty-icon">♡</div>
+        <h3>No favorite songs yet</h3>
+        <p>Tap the heart on any language — favorites stay after refresh.</p>
+      </div>
+      <div id="emptySearch" class="empty-state hidden">
+        <div class="empty-icon">⌕</div>
+        <h3>No results found</h3>
+        <p>Try a different title, singer, composer, movie or language.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Space — Play/Pause &nbsp;|&nbsp; ← → Seek 5s &nbsp;|&nbsp; ↑ ↓ Volume &nbsp;|&nbsp; Linguistic filters + search work together</p>
+  </footer>
+
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <audio id="audio" preload="metadata"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

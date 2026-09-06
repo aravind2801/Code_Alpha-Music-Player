@@ -1,0 +1,463 @@
+:root{
+  --bg:#0b0c14;
+  --card:#12131e;
+  --card-2:#17182a;
+  --border:rgba(255,255,255,0.08);
+  --border-2:rgba(255,255,255,0.12);
+  --text:#f2f3ff;
+  --muted:#a1a3c2;
+  --dim:#6f7194;
+  --accent:#7c5cff;
+  --accent-2:#3b82f6;
+  --accent-grad:linear-gradient(135deg,#7c5cff 0%,#3b82f6 55%,#06b6d4 100%);
+  --radius:24px;
+  --radius-sm:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scrollbar-width:thin;scrollbar-color:var(--accent) transparent}
+body{
+  font-family:'Outfit',system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+  position:relative;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background:
+    radial-gradient(800px 600px at 15% 10%, rgba(124,92,255,0.15), transparent 60%),
+    radial-gradient(900px 700px at 85% 15%, rgba(59,130,246,0.12), transparent 60%),
+    radial-gradient(700px 500px at 50% 90%, rgba(124,92,255,0.08), transparent 60%);
+  pointer-events:none;
+  z-index:-1;
+}
+.bg-orb{position:fixed;border-radius:50%;filter:blur(60px);opacity:0.45;pointer-events:none;z-index:-1}
+.orb-1{width:420px;height:420px;background:rgba(124,92,255,0.18);top:-80px;left:-60px}
+.orb-2{width:520px;height:520px;background:rgba(59,130,246,0.12);top:-120px;right:-100px}
+.orb-3{width:600px;height:600px;background:rgba(6,182,214,0.06);bottom:-200px;left:30%}
+
+/* Header */
+.header{
+  position:sticky;top:0;z-index:20;
+  backdrop-filter:blur(18px) saturate(1.2);
+  background:rgba(11,12,20,0.72);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:1280px;margin:0 auto;
+  padding:16px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-icon{
+  width:38px;height:38px;border-radius:12px;
+  background:var(--accent-grad);
+  display:grid;place-items:center;
+  box-shadow:0 8px 20px rgba(124,92,255,0.35);
+}
+.logo-text{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.02em}
+.logo-text-wrap{display:flex;flex-direction:column;line-height:1}
+.logo-sub{font-size:11px;letter-spacing:0.06em;color:var(--muted);font-weight:600}
+.logo-badge{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:4px 8px;border-radius:100px}
+.search-wrap{
+  position:relative;display:flex;align-items:center;
+  background:rgba(255,255,255,0.06);
+  border:1px solid var(--border);
+  border-radius:100px;
+  padding:0 16px;
+  width:440px;max-width:100%;
+  transition:border-color .2s, background .2s;
+}
+.search-wrap:focus-within{border-color:rgba(124,92,255,0.5);background:rgba(255,255,255,0.08)}
+.search-icon{color:var(--muted);flex-shrink:0}
+.search-wrap input{
+  flex:1;background:transparent;border:none;outline:none;color:var(--text);
+  padding:12px 10px;font-size:13px;font-family:inherit;
+}
+.search-wrap input::placeholder{color:var(--dim)}
+.clear-search{
+  background:rgba(255,255,255,0.1);border:none;color:var(--muted);
+  width:22px;height:22px;border-radius:50%;cursor:pointer;display:grid;place-items:center;font-size:12px;
+}
+.clear-search.hidden{display:none}
+
+.notice-bar{
+  max-width:1280px;margin:14px auto 0;padding:10px 18px;
+  display:flex;align-items:center;gap:10px;
+  background:rgba(124,92,255,0.10);border:1px solid rgba(124,92,255,0.18);
+  border-radius:12px;color:var(--muted);font-size:12px;line-height:1.5;
+  margin-left:24px;margin-right:24px;
+}
+.notice-bar code{background:rgba(255,255,255,0.10);padding:2px 6px;border-radius:6px;font-size:11px;color:var(--text)}
+.notice-bar strong{color:var(--text)}
+.notice-bar a{color:#7dd3fc;text-decoration:underline;text-underline-offset:2px}
+.notice-bar a:hover{color:white}
+@media(min-width:1280px){ .notice-bar{margin-left:auto;margin-right:auto} }
+
+/* Layout - TWO COLUMN: LEFT Now Playing 34% | RIGHT Playlist */
+.container{
+  max-width:1360px;margin:18px auto;padding:0 24px;
+  display:grid;grid-template-columns:minmax(300px, 34%) minmax(0, 1fr);gap:24px;align-items:start;
+  box-sizing:border-box;max-width:100%;overflow-x:hidden;
+}
+.container > *{min-width:0;max-width:100%;box-sizing:border-box}
+.player-card,.playlist-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border:1px solid var(--border);
+  border-radius:24px;
+  backdrop-filter:blur(20px);
+  box-shadow:0 20px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
+  box-sizing:border-box;min-width:0;max-width:100%;
+}
+.player-card{
+  padding:22px;
+  position:sticky;top:86px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.player-card.now-playing{padding:20px 20px 18px}
+.playlist-card{padding:18px;min-height:620px;display:flex;flex-direction:column;overflow:hidden}
+
+/* Artwork — reduced size per request */
+.artwork-wrap{
+  position:relative;
+  width:100%;
+  max-width:260px;
+  aspect-ratio:1;
+  margin:0 auto;
+  border-radius:16px;
+  overflow:hidden;
+  background:#0e0f1a;
+  box-shadow:0 12px 28px rgba(0,0,0,0.38);
+}
+.artwork{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .6s ease, filter .4s, opacity .3s;
+}
+.artwork.hidden{display:none}
+.artwork.playing{transform:scale(1.03)}
+.artwork-glow{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55) 100%);
+  pointer-events:none;z-index:1;
+}
+.artwork-fallback{
+  position:absolute;inset:0;
+  display:grid;place-items:center;place-content:center;gap:6px;
+  background:linear-gradient(135deg,#1a1c33 0%, #252850 45%, #3b2f7a 100%);
+  text-align:center;padding:20px;
+}
+.artwork-fallback.hidden{display:none}
+.artwork-fallback span{
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:36px;letter-spacing:-0.04em;
+  background:var(--accent-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.artwork-fallback small{color:rgba(255,255,255,0.7);font-size:12px;letter-spacing:0.12em;text-transform:uppercase}
+.fav-float{
+  position:absolute;top:14px;right:14px;z-index:2;
+  width:44px;height:44px;border-radius:50%;
+  border:1px solid rgba(255,255,255,0.18);
+  background:rgba(0,0,0,0.35);backdrop-filter:blur(12px);
+  color:white;display:grid;place-items:center;cursor:pointer;
+  transition:all .25s;
+}
+.fav-float:hover{transform:scale(1.06);background:rgba(0,0,0,0.5)}
+.fav-float.active{background:rgba(255,45,85,0.92);border-color:transparent;color:white;box-shadow:0 8px 20px rgba(255,45,85,0.4)}
+.fav-float.active svg{fill:white;stroke:white}
+.fav-float.anim{animation:heartPop .45s cubic-bezier(.34,1.56,.64,1)}
+@keyframes heartPop{0%{transform:scale(1)}50%{transform:scale(1.28)}100%{transform:scale(1)}}
+.lang-badge{
+  position:absolute;left:14px;top:14px;z-index:2;
+  background:rgba(124,92,255,0.92);color:white;
+  padding:5px 10px;border-radius:100px;
+  font-size:10px;font-weight:700;letter-spacing:0.08em;
+  backdrop-filter:blur(8px);box-shadow:0 4px 12px rgba(124,92,255,0.35);
+}
+.playing-badge{
+  position:absolute;left:14px;bottom:14px;z-index:2;
+  background:rgba(0,0,0,0.55);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.12);
+  padding:7px 12px;border-radius:100px;
+  font-size:12px;font-weight:600;letter-spacing:0.04em;
+  display:flex;align-items:center;gap:8px;
+  opacity:0;transform:translateY(8px);transition:.3s;
+}
+.playing-badge.show{opacity:1;transform:translateY(0)}
+/* Left Now Playing header */
+.now-playing-head{display:flex;flex-direction:column;gap:6px;margin-bottom:2px}
+.now-playing-title{display:flex;align-items:center;gap:8px}
+.now-playing-title h2{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;color:#22c55e}
+.now-playing-sub{font-size:12px;color:var(--muted);letter-spacing:0.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.left-meta{margin:8px 0 4px}
+.left-meta .song-title{font-size:20px}
+.save-spotify{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:rgba(29,185,84,0.12);border:1px solid rgba(29,185,84,0.28);color:#1ed760;
+  padding:10px 14px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none;
+  transition:.2s;box-shadow:0 4px 14px rgba(29,185,84,0.15);
+}
+.save-spotify:hover{background:rgba(29,185,84,0.18);transform:translateY(-1px)}
+.spotify-card{
+  background:#0a0a0a;
+  border:1px solid #222;
+  border-radius:14px;
+  padding:12px;
+  display:grid;
+  grid-template-columns:56px 1fr auto;
+  grid-template-rows:auto auto;
+  gap:8px 12px;
+  align-items:center;
+  position:relative;
+}
+.spotify-card-artwork{width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:#111;grid-row:1 / span 2}
+.spotify-card-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;grid-column:2}
+.spotify-card-title{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#fff}
+.spotify-card-artist{font-size:11px;color:#a1a3c2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spotify-card-save{font-size:11px;color:#1ed760;display:flex;align-items:center;gap:6px;margin-top:2px}
+.spotify-card-plus{width:16px;height:16px;border-radius:50%;border:1px solid #1ed760;display:grid;place-items:center;font-size:11px;line-height:1}
+.spotify-card-logo{grid-column:3;grid-row:1;align-self:start;justify-self:end;color:#1DB954}
+.spotify-card-footer{grid-column:1 / -1;display:flex;align-items:center;gap:8px;margin-top:4px}
+.spotify-card-progress{flex:1;height:3px;background:#333;border-radius:100px;overflow:hidden}
+.spotify-card-progress-bar{height:100%;width:0%;background:#fff;border-radius:100px;transition:width 0.1s linear}
+.spotify-card-duration{font-size:11px;color:#a1a3c2;min-width:36px;text-align:right;font-variant-numeric:tabular-nums}
+.spotify-card-more{font-size:14px;color:#6f7194;letter-spacing:3px;flex-shrink:0}
+.spotify-card-play{width:32px;height:32px;border-radius:50%;background:#fff;color:#000;display:grid;place-items:center;cursor:pointer;flex-shrink:0;transition:transform 0.2s;border:none}
+.spotify-card-play:hover{transform:scale(1.05)}
+.spotify-embed-left{position:relative;border-radius:14px;overflow:hidden;background:#000;min-height:152px;border:1px solid var(--border);margin:4px 0}
+.spotify-embed-left iframe{display:block;width:100%;height:152px;border:0}
+.spotify-info-left{text-align:center}
+.bars{display:flex;gap:3px;align-items:end;height:14px}
+.bars i{width:3px;background:var(--accent);border-radius:100px;animation:bar 0.8s infinite ease-in-out}
+.bars i:nth-child(1){height:6px;animation-delay:0s}
+.bars i:nth-child(2){height:12px;animation-delay:0.15s}
+.bars i:nth-child(3){height:8px;animation-delay:0.3s}
+@keyframes bar{0%,100%{transform:scaleY(0.6)}50%{transform:scaleY(1)}}
+
+/* Song meta */
+.song-meta{text-align:center;margin:20px 0 18px}
+.song-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.song-artist{color:var(--muted);font-size:13px;margin-top:6px;font-weight:400}
+.song-movie{color:var(--text);font-size:12px;margin-top:4px;opacity:0.85}
+.song-composer{color:var(--dim);font-size:11px;margin-top:2px;letter-spacing:0.04em;text-transform:uppercase}
+.song-album{color:var(--muted);font-size:12px;margin-top:4px;font-style:italic}
+.preview-status{
+  margin-top:10px;font-size:11px;color:#7dd3fc;background:rgba(125,211,252,0.10);border:1px solid rgba(125,211,252,0.20);
+  padding:8px 10px;border-radius:10px;line-height:1.4;
+}
+.preview-status.hidden{display:none}
+.spotify-btn{
+  display:inline-flex;align-items:center;gap:8px;margin-top:10px;
+  background:#1DB954;color:white;border:none;
+  padding:9px 16px;border-radius:100px;font-size:13px;font-weight:600;
+  text-decoration:none;transition:.2s;box-shadow:0 6px 16px rgba(29,185,84,0.35);
+}
+.spotify-btn:hover{background:#1ed760;transform:translateY(-1px);box-shadow:0 8px 20px rgba(29,185,84,0.45)}
+.spotify-btn.hidden{display:none}
+.audio-status{
+  margin-top:10px;font-size:11px;color:#ffb86a;background:rgba(255,184,106,0.10);border:1px solid rgba(255,184,106,0.20);
+  padding:8px 10px;border-radius:10px;line-height:1.4;word-break:break-all;
+}
+.audio-status.hidden{display:none}
+.audio-status code{color:var(--text);font-size:10px}
+
+/* Progress */
+.progress-section{margin:10px 0 18px}
+.progress-wrap{
+  height:6px;background:rgba(255,255,255,0.08);border-radius:100px;
+  position:relative;cursor:pointer;overflow:visible;
+}
+.progress-wrap:hover{height:8px}
+.progress-bar{
+  height:100%;width:0%;border-radius:100px;
+  background:var(--accent-grad);
+  position:relative;transition:width .1s linear;
+}
+.progress-bar::after{
+  content:"";position:absolute;right:0;top:50%;transform:translate(50%,-50%);
+  width:14px;height:14px;background:white;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.3);opacity:0;transition:.2s;
+}
+.progress-wrap:hover .progress-bar::after,.progress-wrap.dragging .progress-bar::after{opacity:1}
+.progress-handle{position:absolute;inset:0}
+.time-row{display:flex;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* Controls */
+.controls{display:flex;align-items:center;justify-content:center;gap:18px;margin:8px 0 20px}
+.ctrl-btn{
+  width:48px;height:48px;border-radius:50%;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.06);color:var(--text);
+  display:grid;place-items:center;cursor:pointer;transition:.2s;
+}
+.ctrl-btn:hover{background:rgba(255,255,255,0.10);transform:translateY(-1px);border-color:var(--border-2)}
+.ctrl-btn:active{transform:scale(0.96)}
+.ctrl-btn.active{background:rgba(124,92,255,0.22);border-color:rgba(124,92,255,0.35);color:#a78bfa}
+.ctrl-btn.small{width:40px;height:40px}
+.ctrl-btn.small svg{opacity:0.9}
+.play-btn{
+  width:64px;height:64px;border-radius:50%;border:none;
+  background:var(--accent-grad);color:white;
+  display:grid;place-items:center;cursor:pointer;
+  box-shadow:0 10px 24px rgba(124,92,255,0.4);
+  transition:transform .2s, box-shadow .2s;
+}
+.play-btn:hover{transform:scale(1.04);box-shadow:0 14px 30px rgba(124,92,255,0.5)}
+.play-btn:active{transform:scale(0.97)}
+.hidden{display:none !important}
+
+/* Volume */
+.volume-row{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:16px}
+.mute-btn{width:36px;height:36px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,0.06);color:var(--muted);display:grid;place-items:center;cursor:pointer}
+.volume-slider-wrap{flex:1;display:flex;align-items:center}
+input[type="range"]{
+  -webkit-appearance:none;appearance:none;width:100%;height:4px;background:rgba(255,255,255,0.12);border-radius:100px;outline:none;cursor:pointer;
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:white;box-shadow:0 2px 8px rgba(0,0,0,0.3);cursor:pointer;transition:.15s;
+}
+input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:white;border:none;cursor:pointer}
+.vol-percent{font-size:12px;color:var(--muted);min-width:36px;text-align:right;font-variant-numeric:tabular-nums}
+
+/* Playlist */
+.playlist-header{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.tabs{
+  display:flex;gap:6px;background:rgba(255,255,255,0.05);padding:4px;border-radius:100px;border:1px solid var(--border);
+  overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  padding:8px 14px;border-radius:100px;border:none;background:transparent;color:var(--muted);
+  font-size:12px;font-weight:600;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0;
+}
+.tab.active{background:white;color:#0b0c14;box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+.tab-count{background:rgba(0,0,0,0.08);padding:1px 6px;border-radius:100px;font-size:10px;min-width:18px;text-align:center}
+.playlist-sub{font-size:12px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.composer-info{color:var(--dim)}
+.song-list{flex:1;display:flex;flex-direction:column;gap:8px;overflow:auto;max-height:640px;padding-right:4px}
+.song-list::-webkit-scrollbar{width:6px}
+.song-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.12);border-radius:100px}
+.song-item{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 12px;border-radius:14px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid transparent;
+  cursor:pointer;transition:.2s;
+  position:relative;
+}
+.song-item:hover{background:rgba(255,255,255,0.07);border-color:var(--border);transform:translateY(-1px)}
+.song-item.active{background:linear-gradient(135deg, rgba(124,92,255,0.18), rgba(59,130,246,0.12));border-color:rgba(124,92,255,0.30);box-shadow:0 8px 20px rgba(124,92,255,0.15)}
+.song-thumb{width:48px;height:48px;border-radius:10px;object-fit:cover;flex-shrink:0;background:linear-gradient(135deg,#1a1c33,#3b2f7a);display:grid;place-items:center;font-size:11px;font-weight:700;color:white}
+.song-thumb-fallback{
+  width:48px;height:48px;border-radius:10px;flex-shrink:0;display:grid;place-items:center;
+  background:linear-gradient(135deg,#1e203a,#3a2e7a);color:white;font-weight:700;font-size:13px;
+}
+.song-info{flex:1;min-width:0}
+.song-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.song-artist-sm{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.song-meta-sm{font-size:10px;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.song-duration{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;margin-right:4px;flex-shrink:0}
+.song-spotify{
+  width:34px;height:34px;border-radius:50%;border:1px solid rgba(29,185,84,0.25);
+  background:rgba(29,185,84,0.14);color:#1DB954;
+  display:grid;place-items:center;cursor:pointer;transition:.2s;flex-shrink:0;text-decoration:none;
+}
+.song-spotify:hover{background:rgba(29,185,84,0.22);transform:translateY(-1px);color:#1ed760}
+.song-fav{
+  width:34px;height:34px;border-radius:50%;border:1px solid var(--border);
+  background:rgba(255,255,255,0.06);color:var(--muted);
+  display:grid;place-items:center;cursor:pointer;transition:.2s;flex-shrink:0;
+}
+.song-fav:hover{color:white;background:rgba(255,255,255,0.10)}
+.song-fav.active{background:rgba(255,45,85,0.95);border-color:transparent;color:white;box-shadow:0 6px 16px rgba(255,45,85,0.3)}
+.song-fav.active svg{fill:white;stroke:white}
+.song-fav.anim{animation:heartPop .4s}
+.playing-eq{display:flex;gap:2px;align-items:end;height:12px;margin-right:2px;flex-shrink:0}
+.playing-eq i{width:2px;background:var(--accent);border-radius:100px;animation:bar .7s infinite}
+.playing-eq i:nth-child(2){animation-delay:.15s}
+.playing-eq i:nth-child(3){animation-delay:.3s}
+
+/* Empty states */
+.empty-state{text-align:center;padding:48px 20px;color:var(--muted);border:1px dashed var(--border);border-radius:16px;margin-top:12px}
+.empty-state.hidden{display:none}
+.empty-icon{font-size:36px;margin-bottom:12px;opacity:0.6}
+.empty-state h3{color:var(--text);font-size:16px;margin-bottom:8px}
+.empty-state p{font-size:13px;line-height:1.5}
+
+.toast{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  background:#1a1c2e;border:1px solid var(--border);color:var(--text);
+  padding:12px 18px;border-radius:12px;font-size:13px;box-shadow:0 12px 30px rgba(0,0,0,0.4);
+  z-index:50;transition:.3s;
+}
+.toast.hidden{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(10px)}
+
+.footer{text-align:center;padding:18px;color:var(--dim);font-size:11px;letter-spacing:0.02em}
+.footer code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:6px}
+
+/* Spotify embed inside left panel */
+.spotify-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px rgba(34,197,94,0.6);animation:pulseDot 2s infinite}
+@keyframes pulseDot{0%,100%{opacity:1}50%{opacity:0.6}}
+.spotify-embed-left{position:relative;border-radius:14px;overflow:hidden;background:#000;min-height:152px;border:1px solid var(--border)}
+.spotify-embed-left iframe{display:block;position:relative;z-index:1;width:100%;height:152px;border:0}
+.spotify-placeholder{
+  position:absolute;inset:0;display:grid;place-items:center;place-content:center;gap:8px;
+  background:linear-gradient(135deg,#0f111e 0%, #1a1c33 50%, #1e293b 100%);
+  text-align:center;padding:16px;z-index:0;
+}
+.spotify-placeholder.hidden{display:none}
+.spotify-placeholder-icon{width:42px;height:42px;border-radius:50%;background:rgba(29,185,84,0.15);border:1px solid rgba(29,185,84,0.3);display:grid;place-items:center;font-size:20px;color:#1DB954}
+.spotify-placeholder p{color:var(--muted);font-size:12px;line-height:1.4}
+.spotify-placeholder small{color:var(--dim);font-size:11px}
+.spotify-info-left{text-align:center;padding:4px 0}
+.spotify-info-left.hidden{display:none}
+.spotify-track-title{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spotify-track-artist{font-size:11px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spotify-track-album{font-size:11px;color:var(--dim);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spotify-open-link{font-size:11px;color:#1DB954;text-decoration:none;border:1px solid rgba(29,185,84,0.3);padding:6px 12px;border-radius:100px;transition:.2s}
+.spotify-open-link:hover{background:rgba(29,185,84,0.12);color:#1ed760}
+.spotify-open-link.hidden{display:none}
+
+/* Song cards alignment - reference exact */
+.song-item{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 14px;border-radius:14px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid transparent;
+  cursor:pointer;transition:.2s;
+  position:relative;
+  min-height:72px;box-sizing:border-box;
+}
+.song-thumb,.song-thumb-fallback{width:44px;height:44px;border-radius:10px;flex-shrink:0}
+.song-info{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.song-name{font-size:13px;font-weight:700}
+.song-duration{width:46px;text-align:right}
+.song-spotify,.song-fav{width:36px;height:36px}
+.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+
+/* Responsive - reference layout */
+@media(max-width:1200px){
+  .container{grid-template-columns:minmax(280px, 34%) minmax(0, 1fr);gap:18px}
+}
+@media(max-width:900px){
+  .container{grid-template-columns:minmax(260px, 32%) minmax(0, 1fr);gap:16px}
+  .player-card{position:static}
+  .search-wrap{width:280px}
+}
+@media(max-width:768px){
+  .container{grid-template-columns:1fr;gap:18px}
+  .player-card{order:1;position:static}
+  .playlist-card{order:2}
+}
+@media(max-width:640px){
+  .header-inner{flex-direction:column;align-items:stretch}
+  .search-wrap{width:100%}
+  .container{margin:16px auto;padding:0 16px}
+  .player-card{padding:20px}
+  .song-title{font-size:18px}
+  .controls{gap:14px}
+  .song-list{max-height:none}
+  .footer{font-size:11px;padding:14px 16px}
+  .notice-bar{font-size:11px}
+}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
