@@ -2622,6 +2622,7 @@ window.addEventListener('keydown', (e)=>{
   if(!playerCard) return;
   // Make hidden controls visible as single row
   hiddenControls.classList.remove('hidden');
+  hiddenControls.removeAttribute('aria-hidden');
   hiddenControls.style.display = 'flex';
   hiddenControls.style.flexDirection = 'column';
   hiddenControls.style.gap = '12px';
