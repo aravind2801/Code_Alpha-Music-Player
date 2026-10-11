@@ -1,4 +1,4 @@
-/* Mr. Music Player • 1211 Songs (Tamil 911, Telugu 100, English 100, Malayalam 100) — Local HTML5 Audio
+/* Mr. Music Player • 1138 Songs (Tamil 839, Telugu 100, English 100, Malayalam 99) — Local HTML5 Audio
    LOCAL AUDIO ARCHITECTURE — UI PRESERVED, ONLY SOURCE REPLACED:
    - Every song has id, title, artist, language, duration, audio, artwork (optional)
    - audio = public/music/<lang>/<id>.mp3, never youtubeId/youtubeUrl/search URL
@@ -40,7 +40,6 @@ const songs = [
   { id: "ta-004", title: "Nallaru Po", artist: "Various Artists", album: "Dude (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-004.mp3", favorite: false },
   { id: "ta-005", title: "Naan Aval Illai", artist: "Various Artists", album: "Naan Aval Illai (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-005.mp3", favorite: false },
   { id: "ta-006", title: "Sevatha Pulla", artist: "Various Artists", album: "Sevatha Pulla (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-006.mp3", favorite: false },
-  { id: "ta-007", title: "Anbe Anbe", artist: "Various Artists", album: "Anbe Anbe (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-007.mp3", favorite: false },
   { id: "ta-008", title: "Pirai Thedum", artist: "Various Artists", album: "Pirai Thedum (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-008.mp3", favorite: false },
   { id: "ta-009", title: "Para Para", artist: "Various Artists", album: "Neerparavai (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-009.mp3", favorite: false },
   { id: "ta-010", title: "Jal Jal Jal Oosai", artist: "Various Artists", album: "Manam Kothi Paravai (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-010.mp3", favorite: false },
@@ -116,7 +115,7 @@ const songs = [
   { id: "ta-081", title: "Aura 10 10", artist: "Various Artists", album: "Meesaya Murukku 2 (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-081.mp3", favorite: false },
   { id: "ta-082", title: "Avalin Nizhal", artist: "Various Artists", album: "Avalin Nizhal (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-082.mp3", favorite: false },
   { id: "ta-083", title: "Best of GV Prakash", artist: "Various Artists", album: "Best of GV Prakash (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-083.mp3", favorite: false },
-  { id: "ta-084", title: "Kannalanae", artist: "Various Artists", album: "Bombay (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-084.mp3", favorite: false },
+  { id: "ta-084", title: "Kannalanae", artist: "Various Artists", album: "Bombay (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-084.mp3", favorite: false, singer: "K. S. Chithra, A. R. Rahman", year: 1995 },
   { id: "ta-085", title: "Chikitu", artist: "Various Artists", album: "COOLIE (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-085.mp3", favorite: false },
   { id: "ta-086", title: "Title Track", artist: "Darbuka Siva, Sid Sriram", album: "Title Track (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-086.mp3", favorite: false },
   { id: "ta-087", title: "Adangaatha Asuran Performance", artist: "Various Artists", album: "Raayan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-087.mp3", favorite: false },
@@ -136,7 +135,7 @@ const songs = [
   { id: "ta-101", title: "Jinguchaa", artist: "Various Artists", album: "Thug Life (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-101.mp3", favorite: false },
   { id: "ta-102", title: "Kaatrodu Pattam Pola", artist: "Various Artists", album: "Ayothi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-102.mp3", favorite: false },
   { id: "ta-103", title: "Vaayadi Petha Pulla", artist: "Various Artists", album: "Kanaa (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-103.mp3", favorite: false },
-  { id: "ta-104", title: "Kanmani Anbodu", artist: "Various Artists", album: "Guna (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-104.mp3", favorite: false },
+  { id: "ta-104", title: "Kanmani Anbodu", artist: "Various Artists", album: "Guna (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-104.mp3", favorite: false, singer: "Kamal Haasan, S. Janaki", year: 1991 },
   { id: "ta-105", title: "Kannadi Poove", artist: "Various Artists", album: "RETRO (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-105.mp3", favorite: false },
   { id: "ta-106", title: "Kannathil Muthamittal", artist: "Various Artists", album: "Kannathil Muthamittal (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-106.mp3", favorite: false },
   { id: "ta-107", title: "Karuppu Perazhaga", artist: "Various Artists", album: "Kanchana Tamil (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-107.mp3", favorite: false },
@@ -145,7 +144,7 @@ const songs = [
   { id: "ta-110", title: "Loosu Pennae", artist: "Various Artists", album: "Loosu Pennae (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-110.mp3", favorite: false },
   { id: "ta-111", title: "Nenjame Nenjame", artist: "Various Artists", album: "Maamannan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-111.mp3", favorite: false },
   { id: "ta-112", title: "Pookkal Pookkum", artist: "Various Artists", album: "Madharasapattinam (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-112.mp3", favorite: false },
-  { id: "ta-113", title: "Vaathi Coming", artist: "Various Artists", album: "Master (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-113.mp3", favorite: false },
+  { id: "ta-113", title: "Vaathi Coming", artist: "Various Artists", album: "Master (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-113.mp3", favorite: false, singer: "Anirudh Ravichander, Gana Balachandar", year: 2020 },
   { id: "ta-114", title: "Meenamma", artist: "Various Artists", album: "Aasai (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-114.mp3", favorite: false },
   { id: "ta-115", title: "Megham Karukatha", artist: "Various Artists", album: "Thiruchitrambalam (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-115.mp3", favorite: false },
   { id: "ta-116", title: "Aalaporan Thamizhan", artist: "Various Artists", album: "Mersal (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-116.mp3", favorite: false },
@@ -154,14 +153,13 @@ const songs = [
   { id: "ta-119", title: "Monica", artist: "Various Artists", album: "COOLIE (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-119.mp3", favorite: false },
   { id: "ta-120", title: "Muththa Mazhai", artist: "Various Artists", album: "Thug Life (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-120.mp3", favorite: false },
   { id: "ta-121", title: "Muthumani Maala", artist: "Various Artists", album: "Muthumani Maala (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-121.mp3", favorite: false },
-  { id: "ta-122", title: "Para Para", artist: "Various Artists", album: "Neerparavai (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-122.mp3", favorite: false },
   { id: "ta-123", title: "Nenjin Ezhuth", artist: "Various Artists", album: "Nenjin Ezhuth (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-123.mp3", favorite: false },
   { id: "ta-124", title: "Oorum Blood", artist: "Various Artists", album: "Dude (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-124.mp3", favorite: false },
   { id: "ta-125", title: "Oru Paatale Solli", artist: "Various Artists", album: "Deiva Vaakku (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-125.mp3", favorite: false },
   { id: "ta-126", title: "Oru Paathi Kadhavu", artist: "Various Artists", album: "Thaandavam (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-126.mp3", favorite: false },
   { id: "ta-127", title: "Thuli Thuli", artist: "Various Artists", album: "Paiya (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-127.mp3", favorite: false },
   { id: "ta-128", title: "Nee Singam Dhan", artist: "Various Artists", album: "Pathu Thala (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-128.mp3", favorite: false },
-  { id: "ta-129", title: "Ponni Nadhi", artist: "Various Artists", album: "Ponniyin Selvan 1 (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-129.mp3", favorite: false },
+  { id: "ta-129", title: "Ponni Nadhi", artist: "Various Artists", album: "Ponniyin Selvan 1 (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-129.mp3", favorite: false, singer: "A. R. Rahman, A. R. Raihanah, Bamba Bakya", year: 2022 },
   { id: "ta-130", title: "Pottala Muttaye", artist: "Various Artists", album: "Thalaivan Thalaivii (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-130.mp3", favorite: false },
   { id: "ta-131", title: "Usure Pogudhey", artist: "Various Artists", album: "Raavanan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-131.mp3", favorite: false },
   { id: "ta-132", title: "Kannamma", artist: "Various Artists", album: "Rekka (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-132.mp3", favorite: false },
@@ -176,7 +174,7 @@ const songs = [
   { id: "ta-141", title: "THE ONE", artist: "Various Artists", album: "RETRO (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-141.mp3", favorite: false },
   { id: "ta-142", title: "Theekkoluthi", artist: "Various Artists", album: "Bison Kaalamaadan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-142.mp3", favorite: false },
   { id: "ta-143", title: "Thendral Vandhu", artist: "Various Artists", album: "Avatharam (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-143.mp3", favorite: false },
-  { id: "ta-144", title: "Thillana Thillana", artist: "Various Artists", album: "Muthu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-144.mp3", favorite: false },
+  { id: "ta-144", title: "Thillana Thillana", artist: "Various Artists", album: "Muthu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-144.mp3", favorite: false, singer: "Mano, Sujatha Mohan", year: 1995 },
   { id: "ta-145", title: "Urugi Urugi", artist: "Various Artists", album: "Joe (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-145.mp3", favorite: false },
   { id: "ta-146", title: "Vaa Kannamma", artist: "Various Artists", album: "Once More (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-146.mp3", favorite: false },
   { id: "ta-147", title: "Ennadi Maayavi Nee", artist: "Various Artists", album: "VADACHENNAI (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-147.mp3", favorite: false },
@@ -265,11 +263,10 @@ const songs = [
   { id: "ta-184", title: "Alaakaa Loova (Tamil)", artist: "Dhanush, Mammootty", album: "OM (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-184.mp3", favorite: false },
   { id: "ta-185", title: "Anegan - Danga Maari Oodhari", artist: "Harris, Super Hit Dance Song", album: "Dhanush (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-185.mp3", favorite: false },
   { id: "ta-186", title: "Annaatthe Annaatthe", artist: "Rajinikanth, S.P.B", album: "Annaatthe (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-186.mp3", favorite: false },
-  { id: "ta-187", title: "Arabic Kuthu", artist: "Thalapathy Vijay, Pooja Hegde", album: "Beast (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-187.mp3", favorite: false },
+  { id: "ta-187", title: "Arabic Kuthu", artist: "Thalapathy Vijay, Pooja Hegde", album: "Beast (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-187.mp3", favorite: false, singer: "Anirudh Ravichander, Jonita Gandhi", year: 2022 },
   { id: "ta-188", title: "Arumbey", artist: "Vijay Antony, Kiruthiga Udhayanidhi", album: "Kaali (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-188.mp3", favorite: false },
   { id: "ta-189", title: "Asal Kolaar - Karuppu Car ft.Bank Rolls Young", artist: "(Music Video)", album: "RXZOR (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-189.mp3", favorite: false },
   { id: "ta-190", title: "Asuran - Kathari Poovazhagi", artist: "Vetri Maaran, G V Prakash", album: "Dhanush (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-190.mp3", favorite: false },
-  { id: "ta-191", title: "Asuran - Kathari Poovazhagi", artist: "Vetri Maaran, G V Prakash", album: "Dhanush (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-191.mp3", favorite: false },
   { id: "ta-192", title: "Asuran - Polladha Boomi", artist: "Vetri Maaran, G V Prakash", album: "Dhanush (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-192.mp3", favorite: false },
   { id: "ta-193", title: "Aura 10⧸10", artist: "Hiphop Tamizha, Ketika Sharma", album: "Meesaya Murukku 2 (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-193.mp3", favorite: false },
   { id: "ta-194", title: "Azhagae Nee Asainthal", artist: "Vishal, Catherine Tresa", album: "Kathakali (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-194.mp3", favorite: false },
@@ -305,9 +302,7 @@ const songs = [
   { id: "ta-224", title: "Comali - Hi Sonna Podhum", artist: "Hiphop Tamizha", album: "Jayam Ravi, Samyuktha Hegde (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-224.mp3", favorite: false },
   { id: "ta-225", title: "Comali - Paisa Note", artist: "Hiphop Tamizha", album: "Jayam Ravi, Kajal Aggarwal (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-225.mp3", favorite: false },
   { id: "ta-226", title: "DARBAR (Tamil) - Chumma Kizhi ( )", artist: "AR Murugadoss, Anirudh", album: "Rajinikanth (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-226.mp3", favorite: false },
-  { id: "ta-227", title: "DARBAR (Tamil) - Chumma Kizhi ( )", artist: "AR Murugadoss, Anirudh", album: "Rajinikanth (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-227.mp3", favorite: false },
   { id: "ta-228", title: "DARBAR (Tamil) - Dumm Dumm ( )", artist: "AR Murugadoss, Anirudh", album: "Rajinikanth (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-228.mp3", favorite: false },
-  { id: "ta-229", title: "DARBAR (Tamil) - Dumm Dumm ( )", artist: "AR Murugadoss, Anirudh", album: "Rajinikanth (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-229.mp3", favorite: false },
   { id: "ta-230", title: "DARBAR (Tamil) - Tharam Maara Single ( )", artist: "AR Murugadoss, Anirudh", album: "Rajinikanth (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-230.mp3", favorite: false },
   { id: "ta-231", title: "Dai Dakka", artist: "Rishikanth, Anishma Anilk", album: "Modha Rathri (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-231.mp3", favorite: false },
   { id: "ta-232", title: "Dev - Anange (Tamil)", artist: "Harris Jayaraj, Rajath Ravishankar", album: "Karthi, Rakul Preet Singh (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-232.mp3", favorite: false },
@@ -321,7 +316,6 @@ const songs = [
   { id: "ta-240", title: "Dhop (Tamil)", artist: "Ram Charan, Kiara Advani", album: "Game Changer (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-240.mp3", favorite: false },
   { id: "ta-241", title: "Dikkiloona - Per Vachaalum Vaikkaama", artist: "Yuvan Shankar Raja, Karthik Yogi", album: "Santhanam (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-241.mp3", favorite: false },
   { id: "ta-242", title: "Doctor - Chellamma", artist: "Anirudh Ravichander, Nelson Dilipkumar", album: "Sivakarthikeyan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-242.mp3", favorite: false },
-  { id: "ta-243", title: "Doctor - Chellamma", artist: "Anirudh Ravichander, Nelson Dilipkumar", album: "Sivakarthikeyan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-243.mp3", favorite: false },
   { id: "ta-244", title: "Doctor - So Baby", artist: "Anirudh Ravichander, Nelson Dilipkumar", album: "Sivakarthikeyan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-244.mp3", favorite: false },
   { id: "ta-245", title: "Don - Bae", artist: "Anirudh Ravichander, Cibi Chakaravarthi", album: "Sivakarthikeyan, Priyanka Mohan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-245.mp3", favorite: false },
   { id: "ta-246", title: "Don - Jalabulajangu", artist: "Anirudh Ravichander", album: "Sivakarthikeyan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-246.mp3", favorite: false },
@@ -353,7 +347,6 @@ const songs = [
   { id: "ta-272", title: "God Mode", artist: "Suriya, RJB", album: "Karuppu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-272.mp3", favorite: false },
   { id: "ta-273", title: "Goindhamma", artist: "Hiphop Tamizha, Ramya Ranganathan", album: "Meesaya Murukku 2 (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-273.mp3", favorite: false },
   { id: "ta-274", title: "Golden Sparrow", artist: "Priyanka Mohan, Pavish", album: "Dhanush (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-274.mp3", favorite: false },
-  { id: "ta-275", title: "Golden Sparrow", artist: "Priyanka Mohan, Pavish", album: "Dhanush (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-275.mp3", favorite: false },
   { id: "ta-276", title: "Good Bad Ugly： Ak The Tiger", artist: "Darkkey, GV Prakash", album: "Ajith (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-276.mp3", favorite: false },
   { id: "ta-277", title: "Gulaebaghavali", artist: "4K, Kalyaan", album: "Guleba Full Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-277.mp3", favorite: false },
   { id: "ta-278", title: "Gulaebaghavali", artist: "4K, Kalyaan", album: "Guleba Video Song Promo (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-278.mp3", favorite: false },
@@ -400,7 +393,6 @@ const songs = [
   { id: "ta-319", title: "Junga", artist: "Vijay Sethupathi, Sayyeshaa", album: "Koottippo Koodave Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-319.mp3", favorite: false },
   { id: "ta-320", title: "KANAGA OFFICIAL", artist: "Various Artists", album: "KANAGA OFFICIAL (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-320.mp3", favorite: false },
   { id: "ta-321", title: "Kaalamaadan Gaanam", artist: "Dhruv, Mari Selvaraj", album: "Bison Kaalamaadan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-321.mp3", favorite: false },
-  { id: "ta-322", title: "Kaalamaadan Gaanam", artist: "Dhruv, Mari Selvaraj", album: "Bison Kaalamaadan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-322.mp3", favorite: false },
   { id: "ta-323", title: "Kaalathukkum Nee Venum", artist: "HDR, Silambarasan TR", album: "VTK (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-323.mp3", favorite: false },
   { id: "ta-324", title: "Kaappaan - Hey Amigo", artist: "Harris Jayaraj, K.V. Anand", album: "Suriya, Sayyeshaa (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-324.mp3", favorite: false },
   { id: "ta-325", title: "Kaappaan - Siriki (Tamil)", artist: "Harris Jayaraj, K.V. Anand", album: "Suriya, Sayyeshaa (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-325.mp3", favorite: false },
@@ -438,7 +430,6 @@ const songs = [
   { id: "ta-357", title: "Karuppa Kooda Va", artist: "RJ Balaji, @SaiAbhyankkar", album: "Suriya's Karuppu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-357.mp3", favorite: false },
   { id: "ta-358", title: "Karuppu Nerathazhagi - Komban", artist: "Karthi, Lakshmi Menon", album: "Official Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-358.mp3", favorite: false },
   { id: "ta-359", title: "Kasethan Kadavulada", artist: "Ajith Kumar, H Vinoth", album: "Thunivu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-359.mp3", favorite: false },
-  { id: "ta-360", title: "Kasethan Kadavulada", artist: "Ajith Kumar, H Vinoth", album: "Thunivu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-360.mp3", favorite: false },
   { id: "ta-361", title: "Kaththi Sandai - Naan Konjam Karuppu Thaan Tamil", artist: "Hiphop Tamizha", album: "Vishal (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-361.mp3", favorite: false },
   { id: "ta-362", title: "Kattikida - Kaaki Sattai", artist: "Siva Karthikeyan, Sri Divya", album: "Official Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-362.mp3", favorite: false },
   { id: "ta-363", title: "Kodi - Ei Suzhali Tamil", artist: "Santhosh Narayanan", album: "Dhanush, Trisha (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-363.mp3", favorite: false },
@@ -483,7 +474,6 @@ const songs = [
   { id: "ta-402", title: "Maruthu - Akka Petha Jakkavandi", artist: "D. Imman", album: "Vishal, Sri Divya (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-402.mp3", favorite: false },
   { id: "ta-403", title: "Maruthu - Karuvakaatu Karuvaaya", artist: "D. Imman", album: "Vishal, Sri Divya (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-403.mp3", favorite: false },
   { id: "ta-404", title: "Maruvaarthai", artist: "Dhanush, Darbuka Siva", album: "Enai Noki Paayum Thota (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-404.mp3", favorite: false },
-  { id: "ta-405", title: "Maruvaarthai", artist: "Dhanush, Darbuka Siva", album: "Enai Noki Paayum Thota (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-405.mp3", favorite: false },
   { id: "ta-406", title: "Master - Kutti Story", artist: "Anirudh Ravichander, Lokesh Kanagaraj", album: "Thalapathy Vijay (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-406.mp3", favorite: false },
   { id: "ta-407", title: "Master - Vaathi Coming", artist: "Anirudh Ravichander, Lokesh Kanagaraj", album: "Thalapathy Vijay (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-407.mp3", favorite: false },
   { id: "ta-408", title: "Master - Vaathi Raid", artist: "Anirudh Ravichander, Lokesh Kanagaraj", album: "Thalapathy Vijay (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-408.mp3", favorite: false },
@@ -502,7 +492,6 @@ const songs = [
   { id: "ta-421", title: "Meyaadha Maan", artist: "Vaibhav, Priya", album: "Thangachi Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-421.mp3", favorite: false },
   { id: "ta-422", title: "Minikki Minikki - (Tamil)", artist: "Chiyaan Vikram, Pa Ranjith", album: "Thangalaan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-422.mp3", favorite: false },
   { id: "ta-423", title: "Monica", artist: "Superstar Rajinikanth, Lokesh", album: "COOLIE (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-423.mp3", favorite: false },
-  { id: "ta-424", title: "Monica", artist: "Superstar Rajinikanth, Lokesh", album: "COOLIE (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-424.mp3", favorite: false },
   { id: "ta-425", title: "Moonwalk - Yethu", artist: "Prabhudeva, Manoj NS", album: "AR Rahman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-425.mp3", favorite: false },
   { id: "ta-426", title: "Mounam Sollum Varthaigal", artist: "Rahul Riji Nair, Sidhartha Pradeep", album: "Tamil Music Video ft Vinitha Koshy (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-426.mp3", favorite: false },
   { id: "ta-427", title: "Mr.Local", artist: "Sivakarthikeyan, Nayanthara", album: "Takkunu Takkunu Lyric Video (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-427.mp3", favorite: false },
@@ -550,7 +539,6 @@ const songs = [
   { id: "ta-469", title: "Pathala Pathala", artist: "Kamal Haasan, Anirudh Ravichander", album: "VIKRAM (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-469.mp3", favorite: false },
   { id: "ta-470", title: "Pathu Thala - Namma Satham", artist: "Silambarasan TR, Gautham Karthik", album: "A. R Rahman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-470.mp3", favorite: false },
   { id: "ta-471", title: "Pattampoochi", artist: "Suriya, Mamitha Baiju", album: "Vishwanath and Sons (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-471.mp3", favorite: false },
-  { id: "ta-472", title: "Pattampoochi", artist: "Suriya, Mamitha Baiju", album: "Vishwanath and Sons (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-472.mp3", favorite: false },
   { id: "ta-473", title: "Pazhagikalam - Aambala", artist: "Vishal, Hansika", album: "Full Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-473.mp3", favorite: false },
   { id: "ta-474", title: "Petta - Marana Mass (Tamil)", artist: "Anirudh Ravichander", album: "Rajinikanth (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-474.mp3", favorite: false },
   { id: "ta-475", title: "Pokkiri Raja - Bubbly Bubbly", artist: "D. Imman", album: "Jiiva, Hansika Motwani (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-475.mp3", favorite: false },
@@ -558,7 +546,6 @@ const songs = [
   { id: "ta-477", title: "Polladha Ulagam - [4K]", artist: "Dhanush, Karthick Naren", album: "Maaran (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-477.mp3", favorite: false },
   { id: "ta-478", title: "Ponni Nadhi", artist: "Tamil, AR Rahman", album: "Ponniyin Selvan 1 (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-478.mp3", favorite: false },
   { id: "ta-479", title: "Pottala Muttaye", artist: "Vijay Sethupathi, Nithya Menen", album: "Thalaivan Thalaivii (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-479.mp3", favorite: false },
-  { id: "ta-480", title: "Pottala Muttaye", artist: "Vijay Sethupathi, Nithya Menen", album: "Thalaivan Thalaivii (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-480.mp3", favorite: false },
   { id: "ta-481", title: "Powerhouse", artist: "Superstar Rajinikanth, Lokesh", album: "Coolie (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-481.mp3", favorite: false },
   { id: "ta-482", title: "Poyivaa Nanba (Tamil)", artist: "Dhanush, Nagarjuna", album: "Kuberaa (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-482.mp3", favorite: false },
   { id: "ta-483", title: "Poyivaa Nanba", artist: "Dhanush, Nagarjuna", album: "Kuberaa (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-483.mp3", favorite: false },
@@ -583,7 +570,6 @@ const songs = [
   { id: "ta-502", title: "Remo - Tamilselvi", artist: "Anirudh, Keerthi Suresh", album: "Sivakarthikeyan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-502.mp3", favorite: false },
   { id: "ta-503", title: "Romeo Juliet - Dandanakka", artist: "Imman", album: "Jayam Ravi, Hansika (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-503.mp3", favorite: false },
   { id: "ta-504", title: "Rudhran – Jorthaale", artist: "Sarath Kumar, ofRo", album: "Raghava Lawrence (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-504.mp3", favorite: false },
-  { id: "ta-505", title: "Rudhran – Jorthaale", artist: "Sarath Kumar, ofRo", album: "Raghava Lawrence (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-505.mp3", favorite: false },
   { id: "ta-506", title: "Rummy Rummy", artist: "Vijay Sethupathi, Arvind Swamy", album: "Gandhi Talks (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-506.mp3", favorite: false },
   { id: "ta-507", title: "Saami Saami (Tamil)", artist: "Allu Arjun, Rashmika", album: "Pushpa (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-507.mp3", favorite: false },
   { id: "ta-508", title: "Saami Saami (Tamil)", artist: "Allu Arjun, Rashmika", album: "Pushpa - The Rise (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-508.mp3", favorite: false },
@@ -656,7 +642,6 @@ const songs = [
   { id: "ta-575", title: "Thodakkam Mangalyam", artist: "Arya, Bobby Simha", album: "Bangalore Naatkal (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-575.mp3", favorite: false },
   { id: "ta-576", title: "Thodari Songs", artist: "Dhanush, Keerthy Suresh", album: "Adadaa Ithuyenna Full Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-576.mp3", favorite: false },
   { id: "ta-577", title: "Tik Tik Tik - Kurumba", artist: "D.Imman, Sid Sriram", album: "Jayam Ravi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-577.mp3", favorite: false },
-  { id: "ta-578", title: "Tik Tik Tik - Kurumba", artist: "D.Imman, Sid Sriram", album: "Jayam Ravi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-578.mp3", favorite: false },
   { id: "ta-579", title: "Tik Tik Tik - Title Track", artist: "D.Imman", album: "Jayam Ravi, Nivetha Pethuraj (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-579.mp3", favorite: false },
   { id: "ta-580", title: "Tinga - Moonwalk", artist: "Prabhudeva, Manoj N S", album: "A R Rahman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-580.mp3", favorite: false },
   { id: "ta-581", title: "U Turn - The Karma Theme (Tamil) - Samantha", artist: "Pawan Kumar", album: "Anirudh Ravichander (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-581.mp3", favorite: false },
@@ -923,7 +908,6 @@ const songs = [
   { id: "ml-123", title: "Illuminati", artist: "Jithu Madhavan, Fahadh Faasil", album: "Aavesham (Malayalam)", language: "Malayalam", duration: "3:30", audio: "malayalam/ml-123.mp3", favorite: false },
   { id: "ml-124", title: "JIL JIL JIL", artist: "Lukman Avaran, Anarkali", album: "Sulaikha Manzil (Malayalam)", language: "Malayalam", duration: "3:30", audio: "malayalam/ml-124.mp3", favorite: false },
   { id: "ml-125", title: "Jaada", artist: "Jithu Madhavan, Fahadh Faasil", album: "Aavesham (Malayalam)", language: "Malayalam", duration: "3:30", audio: "malayalam/ml-125.mp3", favorite: false },
-  { id: "ml-126", title: "Jaada", artist: "Jithu Madhavan, Fahadh Faasil", album: "Aavesham (Malayalam)", language: "Malayalam", duration: "3:30", audio: "malayalam/ml-126.mp3", favorite: false },
   { id: "ml-129", title: "Kalamkaval", artist: "Jithin K Jose, Mujeeb Majeed", album: "Mammootty (Malayalam)", language: "Malayalam", duration: "3:30", audio: "malayalam/ml-129.mp3", favorite: false },
   { id: "ml-130", title: "Kattu Mooliyo", artist: "Nivin Pauly, Nazriya Nazim", album: "Ohm Shanthi Oshaana (Malayalam)", language: "Malayalam", duration: "3:30", audio: "malayalam/ml-130.mp3", favorite: false },
   { id: "ml-131", title: "Kiliye Kiliye - Afrobeat X Kalyani Priyadarshan ( )", artist: "Aa Raathri, S Janaki", album: "The Independeners (Malayalam)", language: "Malayalam", duration: "3:30", audio: "malayalam/ml-131.mp3", favorite: false },
@@ -959,12 +943,9 @@ const songs = [
   { id: "ta-637", title: "Kannazhaga", artist: "Dhanush, Shruti", album: "3 (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-637.mp3", favorite: false },
   { id: "ta-638", title: "Why This Kolaveri Di", artist: "Dhanush, Shruti Haasan", album: "3 (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-638.mp3", favorite: false },
   { id: "ta-639", title: "7 Aum Arivu - Mun Andhi", artist: "Harris", album: "7 Aum Arivu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-639.mp3", favorite: false },
-  { id: "ta-640", title: "Aasa Kooda", artist: "Preity Mukhundhan, Sai Smriti", album: "Thejo Bharathwaj (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-640.mp3", favorite: false },
   { id: "ta-641", title: "Katchi Sera", artist: "Ken Royson", album: "Samyuktha (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-641.mp3", favorite: false },
   { id: "ta-642", title: "AR Rahman Hit Songs", artist: "Kadhal Desam Tamil Movie, Vineeth", album: "Ennai Kaanavillaye Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-642.mp3", favorite: false },
   { id: "ta-643", title: "Aadukalam - Ayyayo Tamil", artist: "G.V. Prakash Kumar", album: "Dhanush (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-643.mp3", favorite: false },
-  { id: "ta-644", title: "Aathi", artist: "Vijay, Samantha Ruth Prabhu", album: "Kaththi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-644.mp3", favorite: false },
-  { id: "ta-645", title: "Adiye Unna Paathida", artist: "M.Sasikumar, Mia George", album: "Vetrivel (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-645.mp3", favorite: false },
   { id: "ta-646", title: "Agayam Theepiditha Official", artist: "Karthi, Catherine Tresa", album: "Madras (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-646.mp3", favorite: false },
   { id: "ta-647", title: "Ale Ale", artist: "Siddharth, Genelia", album: "Boys Tamil Movie (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-647.mp3", favorite: false },
   { id: "ta-648", title: "Anandham Tamil Movie HD", artist: "Sneha, Abbas", album: "Pallangkuzhiyin Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-648.mp3", favorite: false },
@@ -972,17 +953,9 @@ const songs = [
   { id: "ta-650", title: "Anegan - Aathadi Aathadi", artist: "Harris Jayaraj", album: "Dhanush (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-650.mp3", favorite: false },
   { id: "ta-651", title: "Anegan - Thodu Vaanam", artist: "Harris Jayaraj", album: "Dhanush (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-651.mp3", favorite: false },
   { id: "ta-652", title: "Anegan - Aathadi Aathadi Dhanush Harris Jayaraj", artist: "Various Artists", album: "Anegan - Aathadi Aathadi Dhanush Harris Jayaraj (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-652.mp3", favorite: false },
-  { id: "ta-653", title: "Azhagae Nee Asainthal", artist: "Vishal, Catherine Tresa", album: "Kathakali (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-653.mp3", favorite: false },
-  { id: "ta-654", title: "Bairavaa Songs", artist: "Vijay, Keerthy Suresh", album: "Nillayo Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-654.mp3", favorite: false },
-  { id: "ta-655", title: "Bogan - Senthoora", artist: "Imman, Latest Tamil Hit 2017", album: "Jayam Ravi, Hansika (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-655.mp3", favorite: false },
   { id: "ta-656", title: "Chellame Chellam", artist: "Shreya Ghoshal, Hariharan", album: "Shrutika, Aryan Rajesh (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-656.mp3", favorite: false },
   { id: "ta-657", title: "David - Kanave Kanave HD", artist: "Various Artists", album: "David - Kanave Kanave HD (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-657.mp3", favorite: false },
-  { id: "ta-658", title: "Dharala Prabhu - Title Track", artist: "Anirudh Ravichander, Tanya Hope", album: "Harish Kalyan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-658.mp3", favorite: false },
-  { id: "ta-659", title: "Dharmadurai - Aandipatti", artist: "Yuvan Shankar Raja", album: "Vijay Sethupathi, Aishwarya Rajesh (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-659.mp3", favorite: false },
-  { id: "ta-660", title: "Dhee ft. Arivu - Enjoy Enjaami (Prod. Santhosh Narayanan)", artist: "Various Artists", album: "Dhee ft. Arivu - Enjoy Enjaami (Prod. Santhosh Narayanan) (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-660.mp3", favorite: false },
   { id: "ta-661", title: "Dhool - Aasai Aasai", artist: "Various Artists", album: "Dhool - Aasai Aasai (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-661.mp3", favorite: false },
-  { id: "ta-662", title: "Dikkiloona - Per Vachaalum Vaikkaama", artist: "Yuvan Shankar Raja, Karthik Yogi", album: "Santhanam (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-662.mp3", favorite: false },
-  { id: "ta-663", title: "Doctor - Chellamma", artist: "Anirudh Ravichander, Nelson Dilipkumar", album: "Sivakarthikeyan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-663.mp3", favorite: false },
   { id: "ta-664", title: "En Anbae En Anbae", artist: "Yuvan Shankar Raja, Surya", album: "Mounam Pesiyadhe Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-664.mp3", favorite: false },
   { id: "ta-665", title: "Enakku 20 Unakku 18 Tamil Movie - Yedho Onru", artist: "Trisha, AR Rahman", album: "Tarun (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-665.mp3", favorite: false },
   { id: "ta-666", title: "Engeyum Kaadhal - Engeyum Kaadhal", artist: "Harris", album: "Jayam Ravi, Hansika (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-666.mp3", favorite: false },
@@ -991,23 +964,17 @@ const songs = [
   { id: "ta-669", title: "Ennavale Adi Ennavale - Kaadhalan - HD", artist: "Various Artists", album: "Ennavale Adi Ennavale - Kaadhalan - HD (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-669.mp3", favorite: false },
   { id: "ta-670", title: "Ethir Neechal - Boomi Enna Suthudhe", artist: "Various Artists", album: "Sivakarthikeyan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-670.mp3", favorite: false },
   { id: "ta-671", title: "Ethir Neechal - Velicha Poove", artist: "Sivakarthikeyan,  Priya", album: "Sivakarthikeyan, Priya (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-671.mp3", favorite: false },
-  { id: "ta-672", title: "Ey Sandakaara", artist: "R. Madhavan, Ritika Singh", album: "＂Irudhi Suttru＂ (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-672.mp3", favorite: false },
   { id: "ta-673", title: "Gemini Ganeshanum Suruli Raajanum - Ammukuttiye", artist: "Atharvaa", album: "D. Imman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-673.mp3", favorite: false },
   { id: "ta-674", title: "Gulaebaghavali", artist: "Kalyaan, Prabhu Deva", album: "Seramal Ponal Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-674.mp3", favorite: false },
   { id: "ta-675", title: "Guru - Aaruyirae", artist: "Various Artists", album: "A.R. Rahman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-675.mp3", favorite: false },
   { id: "ta-676", title: "I - Ennodu Nee Irundhaal", artist: "Vikram, Shankar", album: "A.R. Rahman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-676.mp3", favorite: false },
-  { id: "ta-677", title: "I - Pookkalae Sattru Oyivedungal", artist: "Vikram, Amy Jackson", album: "A. R. Rahman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-677.mp3", favorite: false },
   { id: "ta-678", title: "Idu Enna Maayam - Iravaaga Nee", artist: "Vikram Prabhu,  G.V. Prakash Kumar", album: "Vikram Prabhu, G.V. Prakash Kumar (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-678.mp3", favorite: false },
   { id: "ta-679", title: "Idu Enna Maayam - Irukkiraai", artist: "G.V. Prakash", album: "Vikram Prabhu, Keerthy (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-679.mp3", favorite: false },
   { id: "ta-680", title: "Imaikkaa Nodigal", artist: "Hiphop Tamizha, Atharvaa", album: "Kadhal Oru Aagayam Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-680.mp3", favorite: false },
   { id: "ta-681", title: "Innum Konjam Naeram - With Lyrics", artist: "Various Artists", album: "Innum Konjam Naeram - With Lyrics (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-681.mp3", favorite: false },
   { id: "ta-682", title: "Iru Mugan - Kannai Vittu Tamil", artist: "Harris", album: "Vikram, Nayanthara (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-682.mp3", favorite: false },
-  { id: "ta-683", title: "Kaatru Veliyidai - Azhagiye", artist: "Karthi, New Hit Song 2017", album: "A. R. Rahman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-683.mp3", favorite: false },
   { id: "ta-684", title: "Kaatru Veliyidai - Nallai Allai", artist: "Karthi", album: "Mani Ratnam, AR Rahman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-684.mp3", favorite: false },
-  { id: "ta-685", title: "Kaatru Veliyidai - Saarattu Vandiyila", artist: "AR Rahman,  Mani Ratnam", album: "AR Rahman, Mani Ratnam (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-685.mp3", favorite: false },
-  { id: "ta-686", title: "Kadhal Kan Kattudhe - Kaaki Sattai", artist: "Siva Karthikeyan, Sri Divya", album: "Official Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-686.mp3", favorite: false },
   { id: "ta-687", title: "Kadhal Sadugudu Tamil Movie HD", artist: "Vikram, Priyanka", album: "Megathil Ondrai Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-687.mp3", favorite: false },
-  { id: "ta-688", title: "Kanaa - Othaiyadi Pathayila", artist: "Dhibu Ninan Thomas", album: "Arunraja Kamaraj (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-688.mp3", favorite: false },
   { id: "ta-689", title: "Kanaa - Vaayadi Petha Pulla", artist: "Dhibu Ninan Thomas", album: "AishwaryaRajesh, Sivakarthikeyan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-689.mp3", favorite: false },
   { id: "ta-690", title: "Kanave Nee Naan -Kannum Kannum Kollaiyadithaal", artist: "Masala Coffee, Tamil Song", album: "Dulquer S, Ritu V,Rakshan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-690.mp3", favorite: false },
   { id: "ta-691", title: "Kanchana 2 Movie Songs", artist: "Raghava Lawrence, Taapsee", album: "Vaaya En Veera Song With Lyrics (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-691.mp3", favorite: false },
@@ -1017,21 +984,11 @@ const songs = [
   { id: "ta-695", title: "Kavalai Vendam - Nee Tholaindhaayo Tamil", artist: "Leon James", album: "Jiiva (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-695.mp3", favorite: false },
   { id: "ta-696", title: "Kiss - Thirudi", artist: "Sathish, Jen Martin", album: "Kavin (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-696.mp3", favorite: false },
   { id: "ta-697", title: "Ko - Ennamo Yeadho", artist: "Harris", album: "Jiiva, Karthika (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-697.mp3", favorite: false },
-  { id: "ta-698", title: "Kodi - Ei Suzhali Tamil", artist: "Santhosh Narayanan", album: "Dhanush, Trisha (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-698.mp3", favorite: false },
-  { id: "ta-699", title: "Konji Pesida Venaam", artist: "Vijay Sethupathi, Remya Nambeesan", album: "Sethupathi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-699.mp3", favorite: false },
-  { id: "ta-700", title: "Kutty Pattas", artist: "Reba John, Venki", album: "Ashwin (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-700.mp3", favorite: false },
   { id: "ta-701", title: "Laali Laali With Lyrics", artist: "Karthi, Rakul Preet", album: "Theeran Adhigaaram Ondru Movie (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-701.mp3", favorite: false },
-  { id: "ta-702", title: "Maari - Don’u Don’u Don’u", artist: "Anirudh, Super Hit Song", album: "Dhanush, Kajal (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-702.mp3", favorite: false },
-  { id: "ta-703", title: "Maari - Maari Thara Local", artist: "Anirudh Ravichander", album: "Dhanush (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-703.mp3", favorite: false },
-  { id: "ta-704", title: "Maari 2 - Rowdy Baby", artist: "Yuvan Shankar Raja, Balaji Mohan", album: "Dhanush, Sai Pallavi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-704.mp3", favorite: false },
   { id: "ta-705", title: "Madharasapattinam - Pookkal Pookkum Aarya, Amy Jackson", artist: "Various Artists", album: "Madharasapattinam - Pookkal Pookkum Aarya, Amy Jackson (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-705.mp3", favorite: false },
   { id: "ta-706", title: "Manithan - Aval", artist: "Santhosh Narayanan", album: "Udhayanidhi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-706.mp3", favorite: false },
-  { id: "ta-707", title: "Maruthu - Karuvakaatu Karuvaaya", artist: "D. Imman", album: "Vishal, Sri Divya (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-707.mp3", favorite: false },
-  { id: "ta-708", title: "Maruvaarthai", artist: "Dhanush, Darbuka Siva", album: "Enai Noki Paayum Thota (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-708.mp3", favorite: false },
   { id: "ta-709", title: "Maryan - Innum Konjam Naeram", artist: "Dhanush, Super Hit Song", album: "A. R. Rahman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-709.mp3", favorite: false },
   { id: "ta-710", title: "Maryan - Naetru Aval Irundhal", artist: "Dhanush,  Parvathy", album: "Dhanush, Parvathy (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-710.mp3", favorite: false },
-  { id: "ta-711", title: "Master - Vaathi Coming", artist: "Anirudh Ravichander, Lokesh Kanagaraj", album: "Thalapathy Vijay (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-711.mp3", favorite: false },
-  { id: "ta-712", title: "Mersal - Aalaporan Thamizhan Tamil", artist: "A.R. Rahman", album: "Vijay (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-712.mp3", favorite: false },
   { id: "ta-713", title: "Mersal - Neethanae Tamil", artist: "A R Rahman, Atlee", album: "Vijay, Samantha (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-713.mp3", favorite: false },
   { id: "ta-714", title: "Minnalai Pidithu - Shajahan - Tamil Songs HD", artist: "Various Artists", album: "Minnalai Pidithu - Shajahan - Tamil Songs HD (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-714.mp3", favorite: false },
   { id: "ta-715", title: "Minnale", artist: "Various Artists", album: "Azhagiya Theeye song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-715.mp3", favorite: false },
@@ -1044,7 +1001,6 @@ const songs = [
   { id: "ta-722", title: "Mukkala Mukkabala", artist: "Prabhudeva, Nagma", album: "Kadhalan Movie (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-722.mp3", favorite: false },
   { id: "ta-723", title: "Mun Paniya HD for Google Android⧸Apple iOS", artist: "Various Artists", album: "Mun Paniya HD for Google Android⧸Apple iOS (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-723.mp3", favorite: false },
   { id: "ta-724", title: "Naam - Adi Penne (Duet) [ ] - T Suriavelan", artist: "Stephen Zechariah ft Srinisha", album: "Rupiny (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-724.mp3", favorite: false },
-  { id: "ta-725", title: "Naan Mahaan Alle- Iragai Pole HD [1080]", artist: "Various Artists", album: "Naan Mahaan Alle- Iragai Pole HD [1080] (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-725.mp3", favorite: false },
   { id: "ta-726", title: "Naan Nee-Madras", artist: "Various Artists", album: "Naan Nee-Madras (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-726.mp3", favorite: false },
   { id: "ta-727", title: "Naanum Rowdy Dhaan - Neeyum Naanum", artist: "Neeti Mohan, Anirudh", album: "Lyric Video (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-727.mp3", favorite: false },
   { id: "ta-728", title: "Naerukku Naer - Aval Varuvala", artist: "Various Artists", album: "Naerukku Naer - Aval Varuvala (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-728.mp3", favorite: false },
@@ -1052,7 +1008,6 @@ const songs = [
   { id: "ta-730", title: "Nenjukkule Official Full - Kadal - AR Rahman 1080p HD", artist: "Various Artists", album: "Nenjukkule Official Full - Kadal - AR Rahman 1080p HD (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-730.mp3", favorite: false },
   { id: "ta-731", title: "OK Kanmani - Mental Manadhil", artist: "A. R. Rahman, Super Hit Song", album: "Dulquer (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-731.mp3", favorite: false },
   { id: "ta-732", title: "Oh My Kadavule - Marappadhilai Nenje", artist: "Leon James", album: "Ashok Selvan, Ritika Singh (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-732.mp3", favorite: false },
-  { id: "ta-733", title: "Oru Naal Koothu Songs", artist: "Dinesh, Nivetha Pethuraj", album: "Adiyae Azhagae Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-733.mp3", favorite: false },
   { id: "ta-734", title: "Oru Paadhi Kadhavu 1080p HD Bluray +3D Thaandavam", artist: "Various Artists", album: "Oru Paadhi Kadhavu 1080p HD Bluray +3D Thaandavam (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-734.mp3", favorite: false },
   { id: "ta-735", title: "Paiya - Thuli Thuli", artist: "Yuvan Shankar Raja", album: "Karthi, Tamannah (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-735.mp3", favorite: false },
   { id: "ta-736", title: "Paiya - Yedho Ondru Ennai", artist: "Yuvan Shankar Raja", album: "Karthi, Tamannah (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-736.mp3", favorite: false },
@@ -1063,24 +1018,17 @@ const songs = [
   { id: "ta-741", title: "Poi Solla Intha Manasukku Theriyavillai", artist: "April Mathathil", album: "yuvan shankar raja (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-741.mp3", favorite: false },
   { id: "ta-742", title: "Pudichirukku", artist: "Vikram, Trisha", album: "Saamy (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-742.mp3", favorite: false },
   { id: "ta-743", title: "Pugazh - Neeyae", artist: "Vivek - Mervin", album: "Jai, Surabhi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-743.mp3", favorite: false },
-  { id: "ta-744", title: "Rajinimurugan - Un Mele Oru Kannu", artist: "Imman", album: "Sivakarthikeyan, Keethi Suresh (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-744.mp3", favorite: false },
   { id: "ta-745", title: "Rasaali", artist: "STR, A R Rahman", album: "Achcham Yenbadhu Madamaiyada (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-745.mp3", favorite: false },
   { id: "ta-746", title: "Rekka - Kannamma Tamil Vijay Sethupathi D. Imman", artist: "Various Artists", album: "Rekka - Kannamma Tamil Vijay Sethupathi D. Imman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-746.mp3", favorite: false },
   { id: "ta-747", title: "Rummy - Koodamela Koodavechi", artist: "Vijay Sethupathi", album: "Imman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-747.mp3", favorite: false },
   { id: "ta-748", title: "Run Minsaram en meethu", artist: "Various Artists", album: "Run Minsaram en meethu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-748.mp3", favorite: false },
   { id: "ta-749", title: "Saamurai - Moongil Kaadugale", artist: "Various Artists", album: "Saamurai - Moongil Kaadugale (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-749.mp3", favorite: false },
-  { id: "ta-750", title: "Saravanan Irukka Bayamaen - Yembuttu Irukkuthu Aasai", artist: "Latest Hit", album: "Imman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-750.mp3", favorite: false },
-  { id: "ta-751", title: "Selfie Pulla", artist: "Vijay, Samantha", album: "Kaththi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-751.mp3", favorite: false },
-  { id: "ta-752", title: "Sema Songs", artist: "G.V. Prakash Kumar, Arthana Binu", album: "Sandalee Song with Lyrics (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-752.mp3", favorite: false },
-  { id: "ta-753", title: "Sevatha Pulla", artist: "Karthi, Rakul Preet", album: "Theeran Adhigaaram Ondru Video (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-753.mp3", favorite: false },
   { id: "ta-754", title: "Sillunu Oru Kadhal Tamil Movie Songs HD", artist: "Suriya, Bhumika", album: "Munbe Vaa Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-754.mp3", favorite: false },
   { id: "ta-755", title: "Sillunu Oru Kadhal Tamil Movie Songs", artist: "Suriya, Jyothika", album: "New York Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-755.mp3", favorite: false },
   { id: "ta-756", title: "Sivappu Manjal Pachai", artist: "Siddharth, G.V.Prakash Kumar", album: "Usure Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-756.mp3", favorite: false },
   { id: "ta-757", title: "Sollamal Thottu Sellum Thendral-YUVAN SAHANKER HITZS-(NORMAL VERSION ).flv", artist: "Various Artists", album: "Sollamal Thottu Sellum Thendral-YUVAN SAHANKER HITZS-(NORMAL VERSION ).flv (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-757.mp3", favorite: false },
   { id: "ta-758", title: "Tamil Bharathi Nirpathuve Nadapathuve Parapathuve", artist: "Various Artists", album: "Tamil Bharathi Nirpathuve Nadapathuve Parapathuve (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-758.mp3", favorite: false },
   { id: "ta-759", title: "Tamil Songs", artist: "Elangaathu Veesudhey, Ilaiyaraja Songs", album: "இளங்காத்து வீசுதே (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-759.mp3", favorite: false },
-  { id: "ta-760", title: "Thaanaa Serndha Koottam - Sodakku Tamil", artist: "Anirudh l Keerthi Suresh", album: "Suriya (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-760.mp3", favorite: false },
-  { id: "ta-761", title: "Thalli Pogathey", artist: "A R Rahman, STR", album: "Achcham Yenbadhu Madamaiyada (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-761.mp3", favorite: false },
   { id: "ta-762", title: "The Life of Ram", artist: "Vijay Sethupathi, Trisha", album: "96 (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-762.mp3", favorite: false },
   { id: "ta-763", title: "Theekkoluthi Bison Kaalamaadan Dhruv, Anupama Mari Selvaraj Nivas K Prasanna", artist: "Various Artists", album: "Theekkoluthi Bison Kaalamaadan Dhruv, Anupama Mari Selvaraj Nivas K Prasanna (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-763.mp3", favorite: false },
   { id: "ta-764", title: "Thenali (2000)", artist: "Kamal Haasan, Jyothika", album: "Swasame Swasame (New Zealand) (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-764.mp3", favorite: false },
@@ -1092,26 +1040,20 @@ const songs = [
   { id: "ta-770", title: "VADACHENNAI - Ennadi Maayavi Nee Dhanush Vetri Maaran Santhosh Narayanan", artist: "Various Artists", album: "VADACHENNAI - Ennadi Maayavi Nee Dhanush Vetri Maaran Santhosh Narayanan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-770.mp3", favorite: false },
   { id: "ta-771", title: "Vaamanan - Oru Devathai", artist: "Yuvanshankar Raja", album: "Jai, Priya Anand (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-771.mp3", favorite: false },
   { id: "ta-772", title: "Vaanaviley", artist: "Vijayakanth, Simran", album: "Ramanaa Tamil Movie (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-772.mp3", favorite: false },
-  { id: "ta-773", title: "Vaaranam Aayiram - Nenjukkul Peidhidum", artist: "Suriya, Sameera Reddy", album: "Harris Jayaraj (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-773.mp3", favorite: false },
   { id: "ta-774", title: "Vadacurry - Nenjukulle Nee", artist: "Vivek - Mervin", album: "Jai, Swathi Reddy, RJ Balaji (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-774.mp3", favorite: false },
   { id: "ta-775", title: "Vai Raja Vai - Pachchai Vanna", artist: "Gautham Karthik,  Priya Anand", album: "Gautham Karthik, Priya Anand (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-775.mp3", favorite: false },
   { id: "ta-776", title: "Vanakkam Chennai - Oh Penne", artist: "Shiva,  Priya Anand", album: "Shiva, Priya Anand (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-776.mp3", favorite: false },
-  { id: "ta-777", title: "Vedalam - Aaluma Doluma", artist: "Anirudh Ravichander", album: "Ajith (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-777.mp3", favorite: false },
   { id: "ta-778", title: "Veera - Verrattaama Verratturiye Tamil", artist: "Kreshna,  Leon James", album: "Kreshna, Leon James (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-778.mp3", favorite: false },
   { id: "ta-779", title: "Velai Illa Pattadhaari vip Po Indru Neeyaga", artist: "Various Artists", album: "Velai Illa Pattadhaari vip Po Indru Neeyaga (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-779.mp3", favorite: false },
   { id: "ta-780", title: "Velai Illa Pattadhaari #D25 #VIP - Udhungada Sangu", artist: "Various Artists", album: "Full Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-780.mp3", favorite: false },
   { id: "ta-781", title: "Vijay Hits", artist: "Friends Movie Songs, Vijay", album: "Thendral Varum Full Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-781.mp3", favorite: false },
   { id: "ta-782", title: "Vikram Vedha Songs", artist: "R. Madhavan, Sam C S", album: "Tasakku Tasakku Video Song feat. Vijay Sethupathi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-782.mp3", favorite: false },
-  { id: "ta-783", title: "Vikram Vedha Songs", artist: "R. Madhavan, Vijay Sethupathi", album: "Yaanji Video Song (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-783.mp3", favorite: false },
   { id: "ta-784", title: "Vinnaithaandi Varuvaayaa - Anbil Avan", artist: "STR, Trisha", album: "A.R. Rahman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-784.mp3", favorite: false },
-  { id: "ta-785", title: "Vinnaithaandi Varuvaayaa - Hosanna", artist: "STR, Trisha", album: "Rahman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-785.mp3", favorite: false },
   { id: "ta-786", title: "Vinnaithaandi Varuvaayaa - Omana Penne Tamil", artist: "STR", album: "A.R. Rahman (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-786.mp3", favorite: false },
   { id: "ta-787", title: "Visiri - Teaser", artist: "Dhanush, Darbuka Siva", album: "Enai Noki Paayum Thota (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-787.mp3", favorite: false },
   { id: "ta-788", title: "Whistle - Azhagiya Asura", artist: "Various Artists", album: "Whistle - Azhagiya Asura (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-788.mp3", favorite: false },
   { id: "ta-789", title: "Whistlu Whistlu Whistluma", artist: "A R. Rahman", album: "Thalapathy Vijay, Nayanthara (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-789.mp3", favorite: false },
   { id: "ta-790", title: "Yaarumillaa", artist: "Gireesaaya, Radhan", album: "Dhruv Vikram,Banita Sandhu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-790.mp3", favorite: false },
-  { id: "ta-791", title: "Yaayum Making Feat. Naresh Iyer & Rita Thyagarajan", artist: "Murugesh", album: "Shabir Sulthan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-791.mp3", favorite: false },
-  { id: "ta-792", title: "Yennai Arindhaal - Mazhai Vara Pogudhae", artist: "Harris Jayaraj", album: "Ajith (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-792.mp3", favorite: false },
   { id: "ta-793", title: "YouTube - Kushi - Yaar solvatho HD.mp4 djvijay", artist: "Various Artists", album: "YouTube - Kushi - Yaar solvatho HD.mp4 djvijay (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-793.mp3", favorite: false },
   { id: "ta-794", title: "adi kadhal enbathu", artist: "Various Artists", album: "adi kadhal enbathu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-794.mp3", favorite: false },
   { id: "ta-795", title: "hHey Nee Romba Azhaga Irukke - tThottu Thottu Sellum.avi", artist: "Various Artists", album: "hHey Nee Romba Azhaga Irukke - tThottu Thottu Sellum.avi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-795.mp3", favorite: false },
@@ -1135,23 +1077,18 @@ const songs = [
   { id: "ta-801", title: "3 - Nee Paartha Vizhigal", artist: "Various Artists", album: "3 - Nee Paartha Vizhigal (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-801.mp3", favorite: false },
   { id: "ta-802", title: "7 Aum Arivu - Yamma Yamma", artist: "Various Artists", album: "7 Aum Arivu - Yamma Yamma (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-802.mp3", favorite: false },
   { id: "ta-803", title: "7UP Madras Gig - Orasaadha", artist: "Various Artists", album: "7UP Madras Gig - Orasaadha (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-803.mp3", favorite: false },
-  { id: "ta-804", title: "Iravingu Theevai", artist: "Various Artists", album: "Iravingu Theevai (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-804.mp3", favorite: false },
-  { id: "ta-805", title: "Aasa Kooda", artist: "Various Artists", album: "Aasa Kooda (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-805.mp3", favorite: false },
   { id: "ta-806", title: "AASAI", artist: "Various Artists", album: "AASAI (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-806.mp3", favorite: false },
   { id: "ta-807", title: "Aadukalam - Ayyayo", artist: "Various Artists", album: "Aadukalam - Ayyayo (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-807.mp3", favorite: false },
   { id: "ta-808", title: "Adiye", artist: "Various Artists", album: "Adiye (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-808.mp3", favorite: false },
-  { id: "ta-809", title: "Anbe Anbe", artist: "Various Artists", album: "Anbe Anbe (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-809.mp3", favorite: false },
   { id: "ta-810", title: "Anbe En Anbe", artist: "Various Artists", album: "Anbe En Anbe (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-810.mp3", favorite: false },
   { id: "ta-811", title: "Arabu Naade", artist: "Various Artists", album: "Arabu Naade (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-811.mp3", favorite: false },
   { id: "ta-812", title: "Asku Laska", artist: "Various Artists", album: "Asku Laska (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-812.mp3", favorite: false },
   { id: "ta-813", title: "Baana - En Nenjil", artist: "Various Artists", album: "Baana - En Nenjil (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-813.mp3", favorite: false },
-  { id: "ta-814", title: "En Kadhal Solla", artist: "Various Artists", album: "En Kadhal Solla (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-814.mp3", favorite: false },
   { id: "ta-815", title: "En Kadhaliya Romba Pidikum", artist: "Various Artists", album: "En Kadhaliya Romba Pidikum (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-815.mp3", favorite: false },
   { id: "ta-816", title: "Engeyum Kaadhal - Dhimu Dhimu", artist: "Various Artists", album: "Engeyum Kaadhal - Dhimu Dhimu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-816.mp3", favorite: false },
   { id: "ta-817", title: "Engeyum Kaadhal - Thee Illai", artist: "Various Artists", album: "Engeyum Kaadhal - Thee Illai (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-817.mp3", favorite: false },
   { id: "ta-818", title: "Enkeyo Paartha Mayakkam", artist: "Various Artists", album: "Enkeyo Paartha Mayakkam (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-818.mp3", favorite: false },
   { id: "ta-819", title: "Enna Solla Pogirai", artist: "Various Artists", album: "Enna Solla Pogirai (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-819.mp3", favorite: false },
-  { id: "ta-820", title: "Ennai Kollathey", artist: "Various Artists", album: "Ennai Kollathey (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-820.mp3", favorite: false },
   { id: "ta-821", title: "Ethir Neechal - Velicha Poove", artist: "Various Artists", album: "Ethir Neechal - Velicha Poove (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-821.mp3", favorite: false },
   { id: "ta-822", title: "Kaadhalai Solla Mudiyaadha Galatta Kalyaanam", artist: "Various Artists", album: "Kaadhalai Solla Mudiyaadha Galatta Kalyaanam (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-822.mp3", favorite: false },
   { id: "ta-823", title: "Hangova (From ＂DC＂)", artist: "Various Artists", album: "Hangova (From ＂DC＂) (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-823.mp3", favorite: false },
@@ -1183,11 +1120,9 @@ const songs = [
   { id: "ta-848", title: "Munbe Vaa", artist: "Various Artists", album: "Munbe Vaa (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-848.mp3", favorite: false },
   { id: "ta-849", title: "Naam - Adi Penne (Duet)", artist: "Various Artists", album: "Naam - Adi Penne (Duet) (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-849.mp3", favorite: false },
   { id: "ta-850", title: "Naam 2 - Kannoram", artist: "Various Artists", album: "Naam 2 - Kannoram (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-850.mp3", favorite: false },
-  { id: "ta-851", title: "Naan Aval Illai", artist: "Various Artists", album: "Naan Aval Illai (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-851.mp3", favorite: false },
   { id: "ta-852", title: "Nesamaguren", artist: "Various Artists", album: "Nesamaguren (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-852.mp3", favorite: false },
   { id: "ta-853", title: "New York Nagaram", artist: "Various Artists", album: "New York Nagaram (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-853.mp3", favorite: false },
   { id: "ta-854", title: "Nira", artist: "Various Artists", album: "Nira (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-854.mp3", favorite: false },
-  { id: "ta-855", title: "Imaye Imaye", artist: "Various Artists", album: "Imaye Imaye (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-855.mp3", favorite: false },
   { id: "ta-856", title: "Oh My Kadavule - Marappadhilai Nenje", artist: "Various Artists", album: "Oh My Kadavule - Marappadhilai Nenje (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-856.mp3", favorite: false },
   { id: "ta-857", title: "Oorum Blood", artist: "Various Artists", album: "Oorum Blood (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-857.mp3", favorite: false },
   { id: "ta-858", title: "Oru Kal Oru Kannadi - Siva Manasula Sakthi", artist: "Various Artists", album: "Oru Kal Oru Kannadi - Siva Manasula Sakthi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-858.mp3", favorite: false },
@@ -1195,13 +1130,9 @@ const songs = [
   { id: "ta-860", title: "Paakatha Ena Paakatha", artist: "Various Artists", album: "Paakatha Ena Paakatha (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-860.mp3", favorite: false },
   { id: "ta-861", title: "Paiya - Yedho Ondru Ennai", artist: "Various Artists", album: "Paiya - Yedho Ondru Ennai (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-861.mp3", favorite: false },
   { id: "ta-862", title: "Pattampoochi", artist: "Various Artists", album: "Pattampoochi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-862.mp3", favorite: false },
-  { id: "ta-863", title: "Pirai Thedum", artist: "Various Artists", album: "Pirai Thedum (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-863.mp3", favorite: false },
-  { id: "ta-864", title: "Piriyadha Enna", artist: "Various Artists", album: "Piriyadha Enna (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-864.mp3", favorite: false },
   { id: "ta-865", title: "Po Nee Po", artist: "Various Artists", album: "Po Nee Po (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-865.mp3", favorite: false },
   { id: "ta-866", title: "Po Urave", artist: "Various Artists", album: "Po Urave (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-866.mp3", favorite: false },
-  { id: "ta-867", title: "Pogiren", artist: "Various Artists", album: "Pogiren (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-867.mp3", favorite: false },
   { id: "ta-868", title: "Poovukkul", artist: "Various Artists", album: "Poovukkul (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-868.mp3", favorite: false },
-  { id: "ta-869", title: "Raga of Revenge (From ＂DC＂)", artist: "Various Artists", album: "Raga of Revenge (From ＂DC＂) (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-869.mp3", favorite: false },
   { id: "ta-870", title: "Sakkarai Nilavea", artist: "Various Artists", album: "Sakkarai Nilavea (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-870.mp3", favorite: false },
   { id: "ta-871", title: "Sirai - Neelothi", artist: "Various Artists", album: "Sirai - Neelothi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-871.mp3", favorite: false },
   { id: "ta-872", title: "Sivappu Manjal Pachai - Usure", artist: "Various Artists", album: "Sivappu Manjal Pachai - Usure (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-872.mp3", favorite: false },
@@ -1214,7 +1145,6 @@ const songs = [
   { id: "ta-879", title: "Thean Kudika", artist: "Various Artists", album: "Thean Kudika (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-879.mp3", favorite: false },
   { id: "ta-880", title: "Theekkoluthi", artist: "Various Artists", album: "Theekkoluthi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-880.mp3", favorite: false },
   { id: "ta-881", title: "Thenmozhi", artist: "Various Artists", album: "Thenmozhi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-881.mp3", favorite: false },
-  { id: "ta-882", title: "En Jeevan", artist: "Various Artists", album: "En Jeevan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-882.mp3", favorite: false },
   { id: "ta-883", title: "Trisha Illana Nayanthara - Yennachu Yedhachu", artist: "Various Artists", album: "Trisha Illana Nayanthara - Yennachu Yedhachu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-883.mp3", favorite: false },
   { id: "ta-884", title: "Udhayam NH4 - Yaaro Ivan", artist: "Various Artists", album: "Udhayam NH4 - Yaaro Ivan (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-884.mp3", favorite: false },
   { id: "ta-885", title: "Udhungada sangu", artist: "Various Artists", album: "Udhungada sangu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-885.mp3", favorite: false },
@@ -1226,13 +1156,10 @@ const songs = [
   { id: "ta-891", title: "Uyire Uyire", artist: "Various Artists", album: "Uyire Uyire (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-891.mp3", favorite: false },
   { id: "ta-892", title: "Vaadi Pulla Vaadi", artist: "Various Artists", album: "Vaadi Pulla Vaadi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-892.mp3", favorite: false },
   { id: "ta-893", title: "Vaaranam Aayiram - Annul Maelae", artist: "Various Artists", album: "Vaaranam Aayiram - Annul Maelae (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-893.mp3", favorite: false },
-  { id: "ta-894", title: "Vaaya moodi summa iru da", artist: "Various Artists", album: "Vaaya moodi summa iru da (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-894.mp3", favorite: false },
   { id: "ta-895", title: "Vaayamoodi Summa Iru Da", artist: "Various Artists", album: "Vaayamoodi Summa Iru Da (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-895.mp3", favorite: false },
   { id: "ta-896", title: "Vanakkam Chennai - Oh Penne", artist: "Various Artists", album: "Vanakkam Chennai - Oh Penne (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-896.mp3", favorite: false },
   { id: "ta-897", title: "Velai Illa Pattadhaari #D25 #VIP - Udhungada Sangu", artist: "Various Artists", album: "Velai Illa Pattadhaari #D25 #VIP - Udhungada Sangu (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-897.mp3", favorite: false },
   { id: "ta-898", title: "Venghai - Orey Oru", artist: "Various Artists", album: "Venghai - Orey Oru (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-898.mp3", favorite: false },
-  { id: "ta-899", title: "Venmathiye", artist: "Various Artists", album: "Venmathiye (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-899.mp3", favorite: false },
-  { id: "ta-900", title: "Venmathiye", artist: "Various Artists", album: "Venmathiye (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-900.mp3", favorite: false },
   { id: "ta-901", title: "Vizhi Moodi", artist: "Various Artists", album: "Vizhi Moodi (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-901.mp3", favorite: false },
   { id: "ta-902", title: "Vizhigalil Oru", artist: "Various Artists", album: "Vizhigalil Oru (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-902.mp3", favorite: false },
   { id: "ta-903", title: "Yaaradi Nee Mohini - Venmegam", artist: "Various Artists", album: "Yaaradi Nee Mohini - Venmegam (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-903.mp3", favorite: false },
@@ -1244,7 +1171,7 @@ const songs = [
   { id: "ta-909", title: "அனேகன் - தொடு வானம் தமிழ் பாடல்வரிகள்", artist: "Various Artists", album: "அனேகன் - தொடு வானம் தமிழ் பாடல்வரிகள் (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-909.mp3", favorite: false },
   { id: "ta-910", title: "ஐ - என்னோடு நீ இருந்தால் தமிழ் லிரிக்", artist: "Various Artists", album: "ஐ - என்னோடு நீ இருந்தால் தமிழ் லிரிக் (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-910.mp3", favorite: false },
   { id: "ta-911", title: "கட்டா குஸ்தி 2 - சம்பவக்காரி தமிழ் பாடல்வரிகள்", artist: "Various Artists", album: "கட்டா குஸ்தி 2 - சம்பவக்காரி தமிழ் பாடல்வரிகள் (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-911.mp3", favorite: false },
-  { id: "ta-912", title: "Ava Enna (Slowed + Reverb)", artist: "Various Artists", album: "Ava Enna (Slowed + Reverb) (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-912.mp3", favorite: false },
+  { id: "ta-912", title: "Ava Enna (Slowed + Reverb)", artist: "Various Artists", album: "Ava Enna (Slowed + Reverb) (Tamil)", language: "Tamil", duration: "3:30", audio: "tamil/ta-912.mp3", favorite: false }
 ];
 
 // Elements — preserved layout, no changes
@@ -1332,6 +1259,44 @@ function toggleFav(id){
   showToast(isFav(id) ? 'Added to favorites ❤️' : 'Removed from favorites');
 }
 function getCover(song){ return song.cover || ''; }
+
+// --- Clean song display: verified playback singer(s) + release year ---
+// `singer`/`year` are curated ONLY from verifiable sources (film soundtrack
+// credits). The legacy `artist` field often holds film actors, composers or
+// "Various Artists", so it is NEVER presented as the singer. Unverified rows
+// fall back to the film name, or "Unknown artist" when even that would just
+// repeat the title. Nothing here is guessed.
+const METADATA_SOURCES = {
+  'ta-084': 'Bombay (1995): K. S. Chithra, A. R. Rahman — Gaana/JioSaavn/Wikipedia',
+  'ta-104': 'Guna (1991): Kamal Haasan, S. Janaki — Wikipedia/Gaana/Apple Music',
+  'ta-113': 'Master single (10 Mar 2020): Anirudh Ravichander, Gana Balachandar — Wikipedia/Gaana',
+  'ta-129': 'Ponniyin Selvan 1 single (31 Jul 2022): A. R. Rahman, A. R. Raihanah, Bamba Bakya — Wikipedia/Apple Music',
+  'ta-144': 'Muthu (1995): Mano, Sujatha Mohan — Wikipedia/JioSaavn/Apple Music',
+  'ta-187': 'Beast single (14 Feb 2022): Anirudh Ravichander, Jonita Gandhi — Wikipedia/Apple Music/Spotify'
+};
+function isGenericArtist(name){
+  return /^\s*(various artists|unknown artist|various|unknown)\s*$/i.test(String(name || ''));
+}
+function getFilm(song){
+  // `album` holds the film name plus a redundant " (Language)" suffix — strip it.
+  const cleaned = String(song.album || '').replace(/\s*\((Tamil|Telugu|English|Malayalam|Hindi|Punjabi)\)\s*/gi, ' ').replace(/\s+/g, ' ').trim();
+  // Hide when the "film" just repeats the song title.
+  if(!cleaned || cleaned.toLowerCase() === String(song.title || '').toLowerCase()) return '';
+  return cleaned;
+}
+function getSinger(song){ return String(song.singer || '').trim(); }
+function getYear(song){ return song.year || ''; }
+function getDisplaySub(song){
+  const singer = getSinger(song);
+  const year = getYear(song);
+  const film = getFilm(song);
+  if(singer && year) return `${singer} • ${year}`;
+  if(singer) return singer;
+  if(film && year) return `${film} • ${year}`;
+  if(film) return film;
+  if(year) return String(year);
+  return 'Unknown artist';
+}
 function getAlbum(song){ return song.album || ''; }
 function getComposer(song){ return song.composer || ''; }
 function formatTime(s){
@@ -1411,8 +1376,8 @@ function updateAudioVisual(song){
       // If cover exists, try to show, otherwise show initials
       // We will update sPlace content to show Now Playing audio visual
       sPlace.innerHTML = cover
-        ? `<div style="width:100%;height:100%;display:grid;place-items:center;background:linear-gradient(135deg,#1a1c33 0%, #252850 45%, #3b2f7a 100%);border-radius:14px;"><img src="${cover}" alt="${song.title}" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'"><div style="display:none;place-items:center;place-content:center;gap:6px;text-align:center;padding:20px;"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:36px;letter-spacing:-0.04em;background:var(--accent-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">${initials}</span><small style="color:rgba(255,255,255,0.7);font-size:12px;letter-spacing:0.12em;text-transform:uppercase">${song.artist}</small></div></div>`
-        : `<div class="artwork-fallback" style="position:static;inset:auto;display:grid;place-items:center;place-content:center;gap:6px;background:linear-gradient(135deg,#1a1c33 0%, #252850 45%, #3b2f7a 100%);text-align:center;padding:20px;border-radius:14px;width:100%;height:100%;"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:36px;letter-spacing:-0.04em;background:var(--accent-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">${initials}</span><small style="color:rgba(255,255,255,0.7);font-size:12px;letter-spacing:0.12em;text-transform:uppercase">${song.artist}</small></div>`;
+        ? `<div style="width:100%;height:100%;display:grid;place-items:center;background:linear-gradient(135deg,#1a1c33 0%, #252850 45%, #3b2f7a 100%);border-radius:14px;"><img src="${cover}" alt="${song.title}" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'"><div style="display:none;place-items:center;place-content:center;gap:6px;text-align:center;padding:20px;"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:36px;letter-spacing:-0.04em;background:var(--accent-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">${initials}</span><small style="color:rgba(255,255,255,0.7);font-size:12px;letter-spacing:0.12em;text-transform:uppercase">${escapeHtml(getDisplaySub(song))}</small></div></div>`
+        : `<div class="artwork-fallback" style="position:static;inset:auto;display:grid;place-items:center;place-content:center;gap:6px;background:linear-gradient(135deg,#1a1c33 0%, #252850 45%, #3b2f7a 100%);text-align:center;padding:20px;border-radius:14px;width:100%;height:100%;"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:36px;letter-spacing:-0.04em;background:var(--accent-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">${initials}</span><small style="color:rgba(255,255,255,0.7);font-size:12px;letter-spacing:0.12em;text-transform:uppercase">${escapeHtml(getDisplaySub(song))}</small></div>`;
       // Keep placeholder visible as audio visual, not error
     }
   }
@@ -1426,20 +1391,28 @@ function loadSong(index, autoplay=false){
   const album = getAlbum(song);
   const composer = getComposer(song);
 
-  // Update Now Playing header
-  if(nowPlayingSub) nowPlayingSub.textContent = `${song.language} • ${album}`;
+  // Update Now Playing header (film without the redundant language suffix)
+  const film = getFilm(song);
+  const sub = getDisplaySub(song);
+  if(nowPlayingSub) nowPlayingSub.textContent = film ? `${song.language} • ${film}` : song.language;
 
-  // Update song meta (centered below controls)
+  // Update song meta (centered below controls): title + singer • year
   const leftMeta = document.getElementById('leftMeta');
   if(leftMeta){
     leftMeta.classList.remove('hidden');
     leftMeta.style.display = 'block';
   }
   if(songTitle) songTitle.textContent = song.title;
-  if(songArtist) songArtist.textContent = song.artist;
-  if(songMovie) songMovie.textContent = album;
-  if(songComposer) songComposer.textContent = composer ? `Composer: ${composer}` : '';
-  if(songAlbum) songAlbum.textContent = `Album: ${album} • ${song.language} • ${song.duration || ''}`;
+  if(songArtist) songArtist.textContent = sub;
+  if(songMovie){
+    songMovie.textContent = film;
+    songMovie.classList.toggle('hidden', !film);
+  }
+  if(songComposer) songComposer.textContent = '';
+  if(songAlbum){
+    songAlbum.textContent = '';
+    songAlbum.classList.add('hidden');
+  }
 
   // Artwork fallback for legacy (if still present)
   if(fallbackInitials) fallbackInitials.textContent = getInitials(song.title);
@@ -1481,7 +1454,7 @@ function loadSong(index, autoplay=false){
     spotifyCard.style.display = 'none';
   }
   if(spotifyTrackTitle) spotifyTrackTitle.textContent = song.title;
-  if(spotifyTrackArtist) spotifyTrackArtist.textContent = song.artist;
+  if(spotifyTrackArtist) spotifyTrackArtist.textContent = getSinger(song) || 'Unknown artist';
   if(spotifyTrackAlbum) spotifyTrackAlbum.textContent = album + " • " + song.language;
   if(spotifyLang) spotifyLang.textContent = song.language + " • " + album;
   if(spotifyOpenLink){
@@ -1490,7 +1463,7 @@ function loadSong(index, autoplay=false){
   }
   if(spotifyCardArtwork && cover) { spotifyCardArtwork.src = cover; spotifyCardArtwork.alt = song.title; }
   if(spotifyCardTitle) spotifyCardTitle.textContent = song.title;
-  if(spotifyCardArtist) spotifyCardArtist.textContent = song.artist;
+  if(spotifyCardArtist) spotifyCardArtist.textContent = getSinger(song) || 'Unknown artist';
   if(spotifyCardDuration) spotifyCardDuration.textContent = song.duration || '03:30';
 
   // Reset progress
@@ -1573,7 +1546,8 @@ function playSong(song){
 
   // Update UI
   const album = getAlbum(song);
-  if(nowPlayingSub) nowPlayingSub.textContent = `${song.language} • ${album}`;
+  const film = getFilm(song);
+  if(nowPlayingSub) nowPlayingSub.textContent = film ? `${song.language} • ${film}` : song.language;
   updateAudioVisual(song);
   updateFavUI();
   renderPlaylist();
@@ -1791,7 +1765,7 @@ function updateMediaSession(){
     if(!s) return;
     try{
       navigator.mediaSession.metadata = new MediaMetadata({
-        title: s.title, artist: s.artist, album: getAlbum(s),
+        title: s.title, artist: getSinger(s) || 'Unknown artist', album: getFilm(s) || s.language,
         artwork: [{src: getCover(s), sizes:'512x512', type:'image/jpeg'}]
       });
     }catch{}
@@ -1813,8 +1787,14 @@ function filteredSongs(){
     if(!q) return true;
     const album = getAlbum(s).toLowerCase();
     const composer = getComposer(s).toLowerCase();
+    const singer = getSinger(s).toLowerCase();
+    const film = getFilm(s).toLowerCase();
+    const year = String(getYear(s) || '').toLowerCase();
     return s.title.toLowerCase().includes(q) ||
            s.artist.toLowerCase().includes(q) ||
+           singer.includes(q) ||
+           film.includes(q) ||
+           year.includes(q) ||
            album.toLowerCase().includes(q) ||
            composer.toLowerCase().includes(q) ||
            s.language.toLowerCase().includes(q);
@@ -1864,20 +1844,20 @@ function renderPlaylist(){
     const fav = isFav(song.id);
     const initials = getInitials(song.title);
     const cover = getCover(song);
-    const album = getAlbum(song);
+    const film = getFilm(song);
+    const sub = getDisplaySub(song);
     const canPlay = isValidAudioPath(song.audio);
     const el=document.createElement('div');
     el.className='song-item'+(isActive?' active':'');
     el.setAttribute('role','listitem');
     el.tabIndex=0;
-    el.setAttribute('aria-label', `${song.title} by ${song.artist} — ${album} • ${song.language}`);
+    el.setAttribute('aria-label', `${song.title} — ${sub}${film ? ` — ${film}` : ''}`);
     el.innerHTML=`
       <div class="song-thumb-fallback" aria-hidden="true"><span>${initials}</span></div>
       <img class="song-thumb hidden" src="${cover || ''}" alt="" loading="lazy" style="${cover ? '' : 'display:none'}" />
       <div class="song-info">
-        <div class="song-name">${escapeHtml(song.title)} <span style="font-size:10px;color:var(--dim);font-weight:600;border:1px solid var(--border);padding:1px 6px;border-radius:100px;margin-left:6px;vertical-align:middle">${escapeHtml(song.language)}</span></div>
-        <div class="song-artist-sm">${escapeHtml(song.artist)}</div>
-        <div class="song-meta-sm">${escapeHtml(album)} • ${escapeHtml(song.duration||'')}</div>
+        <div class="song-name">${escapeHtml(song.title)}</div>
+        <div class="song-artist-sm">${escapeHtml(sub)}</div>
       </div>
       ${isActive && isPlaying && canPlay ? '<div class="playing-eq" aria-hidden="true"><i style="height:6px"></i><i style="height:12px"></i><i style="height:9px"></i></div>' : `<span class="song-duration">${escapeHtml(song.duration||'')}</span>`}
       <a href="${audioUrl(song)}" target="_blank" rel="noopener" class="song-spotify" aria-label="${canPlay ? 'Open audio' : 'Audio unavailable'}" onclick="event.stopPropagation(); if(!isValidAudioPath('${audioUrl(song)}')){event.preventDefault(); showToast('Audio unavailable'); return false;} // Let browser handle audio file play in new tab" title="${canPlay ? 'Open audio' : 'Audio unavailable'}" style="${canPlay ? 'background:rgba(124,92,255,0.14);border-color:rgba(124,92,255,0.25);color:#7c5cff' : 'opacity:0.5;'}">
