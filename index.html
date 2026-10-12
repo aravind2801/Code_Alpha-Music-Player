@@ -49,7 +49,7 @@
             </defs>
             <path d="M3 5.2 C 35 5.4, 55 1.2, 82 2.6 C 102 3.6, 115 4.8, 129 1.4" stroke="url(#brandSwoosh)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
           </svg>
-          <span class="logo-sub">1138 Songs • 4 Languages</span>
+          <span class="logo-sub">843 Songs • Tamil Only</span>
         </div>
         <span class="logo-badge">PLAYER</span>
       </div>
@@ -110,11 +110,14 @@
     <section class="playlist-card" aria-label="Playlist">
       <div class="playlist-header">
         <div class="tabs" role="tablist" id="tabs">
-          <button data-filter="all" class="tab active" role="tab" aria-selected="true">All <span class="tab-count" id="countAll">0</span></button>
-          <button data-filter="tamil" class="tab" role="tab" aria-selected="false">Tamil <span class="tab-count" id="countTamil">0</span></button>
-          <button data-filter="telugu" class="tab" role="tab" aria-selected="false">Telugu <span class="tab-count" id="countTelugu">0</span></button>
-          <button data-filter="english" class="tab" role="tab" aria-selected="false">English <span class="tab-count" id="countEnglish">0</span></button>
-          <button data-filter="malayalam" class="tab" role="tab" aria-selected="false">Malayalam <span class="tab-count" id="countMalayalam">0</span></button>
+          <button data-filter="all" class="tab active" role="tab" aria-selected="true">🎵 All Tamil Songs <span class="tab-count" id="countAll">0</span></button>
+          <button data-filter="love" class="tab" role="tab" aria-selected="false">❤️ Love Songs <span class="tab-count" id="countLove">0</span></button>
+          <button data-filter="sleep" class="tab" role="tab" aria-selected="false">🌙 Sleep Songs <span class="tab-count" id="countSleep">0</span></button>
+          <button data-filter="kuthu" class="tab" role="tab" aria-selected="false">🔥 Kuthu Songs <span class="tab-count" id="countKuthu">0</span></button>
+          <button data-filter="melody" class="tab" role="tab" aria-selected="false">🎹 Melody Songs <span class="tab-count" id="countMelody">0</span></button>
+          <button data-filter="album" class="tab" role="tab" aria-selected="false">🎧 Album Songs <span class="tab-count" id="countAlbum">0</span></button>
+          <button data-filter="trending" class="tab" role="tab" aria-selected="false">📈 Trending Songs <span class="tab-count" id="countTrending">0</span></button>
+          <button data-filter="uncategorized" class="tab" role="tab" aria-selected="false">🗂️ Uncategorized <span class="tab-count" id="countUncat">0</span></button>
           <button data-filter="favorites" class="tab" role="tab" aria-selected="false">❤️ Favorites <span class="tab-count" id="countFav">0</span></button>
         </div>
         <div class="playlist-sub"><span id="playlistInfo">0 songs</span> <span id="composerInfo" class="composer-info"></span></div>
@@ -123,7 +126,7 @@
       <div id="emptyFav" class="empty-state hidden">
         <div class="empty-icon">♡</div>
         <h3>No favorite songs yet</h3>
-        <p>Tap the heart on any language — favorites stay after refresh.</p>
+        <p>Tap the heart on any song — favorites stay after refresh.</p>
       </div>
       <div id="emptySearch" class="empty-state hidden">
         <div class="empty-icon">⌕</div>
@@ -134,11 +137,12 @@
   </main>
 
   <footer class="footer">
-    <p>Space — Play/Pause &nbsp;|&nbsp; ← → Seek 5s &nbsp;|&nbsp; ↑ ↓ Volume &nbsp;|&nbsp; Linguistic filters + search work together</p>
+    <p>Space — Play/Pause &nbsp;|&nbsp; ← → Seek 5s &nbsp;|&nbsp; ↑ ↓ Volume &nbsp;|&nbsp; Category filters + search work together</p>
   </footer>
 
   <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
   <audio id="audio" preload="metadata"></audio>
+  <script src="categories.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

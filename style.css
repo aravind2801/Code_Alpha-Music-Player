@@ -467,3 +467,18 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;b
   .notice-bar{font-size:11px}
 }
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Tamil category navigation (Stage 4) — theme unchanged, neon purple/cyan */
+.tabs{scrollbar-width:thin;scrollbar-color:rgba(124,92,255,0.4) transparent}
+.tab .tab-count{background:rgba(124,92,255,0.14);color:inherit}
+.tab.active .tab-count{background:rgba(0,0,0,0.10)}
+.song-cats{display:inline-flex;gap:3px;margin-left:6px;vertical-align:middle}
+.cat-chip{
+  display:inline-grid;place-items:center;
+  width:20px;height:20px;border-radius:6px;font-size:11px;line-height:1;
+  background:rgba(124,92,255,0.14);border:1px solid rgba(124,92,255,0.25);
+}
+@media(max-width:640px){
+  .tab{padding:8px 12px;font-size:11px}
+  .cat-chip{width:18px;height:18px;font-size:10px}
+}
